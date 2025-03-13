@@ -2074,13 +2074,23 @@ p.contact_success_box{
     transition: transform 0.4s ease-in-out;
 }
 
-.overlay {
+.hover-overlay {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
 }
 
 .category {
@@ -2088,16 +2098,19 @@ p.contact_success_box{
     font-weight: 400;
 }
 
-h3 {
+.overlay-content h3 {
     font-size: 20px;
     font-weight: 700;
     margin-top: 5px;
 }
 
-.work-item:hover img {
-    transform: scale(1.1);
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out; /* Reduced from 0.4s to 0.2s */
 }
 
-.work-item:hover .overlay {
-    opacity: 1;
+.work-item:hover img {
+    transform: scale(1.1);
 }
