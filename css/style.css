@@ -2023,3 +2023,81 @@ p.contact_success_box{
     background-color: #e6b853;
     color: #fff;
 }
+
+
+.recent-works {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff3dff;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.work-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.category {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.work-item:hover img {
+    transform: scale(1.1);
+}
+
+.work-item:hover .overlay {
+    opacity: 1;
+}
