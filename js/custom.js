@@ -442,3 +442,16 @@ $(window).load(function(){
 
 		
 });
+
+let currentIndex = 0;
+        const productWrapper = document.querySelector(".product-wrapper");
+        const productCardWidth = document.querySelector(".product-card").offsetWidth + 20; // Card width + margin
+        const totalProducts = document.querySelectorAll(".product-card").length;
+        const maxIndex = totalProducts - 3; // Since we show 3 products at a time
+
+        function moveCarousel(direction) {
+            if ((direction === -1 && currentIndex > 0) || (direction === 1 && currentIndex < maxIndex)) {
+                currentIndex += direction;
+                productWrapper.style.transform = `translateX(${-currentIndex * productCardWidth}px)`;
+            }
+        }

@@ -37,6 +37,9 @@
     <!-- Font Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -219,7 +222,7 @@
       <section class="featured-products">
         <h2>OUR MOST LOVED PRODUCTS</h2>
         <div class="navigation">
-            <button class="nav-button">◀</button>
+            <button class="nav-button left" onclick="moveCarousel(-1)">◀</button>
             <div class="product-container">
                 <div class="product-card">
                     <span class="wishlist">❤️</span>
@@ -253,32 +256,10 @@
                     <a href="#" class="end-deal">End Deal</a>
                 </div>
 
-                <div class="product-card">
-                    <span class="wishlist">❤️</span>
-                    <img src="product4.jpg" alt="Product 4">
-                    <p class="product-name">Golden Goddess Highlighter</p>
-                    <p class="product-price">$25.00</p>
-                    <a href="#" class="end-deal">End Deal</a>
-                </div>
-
-                <div class="product-card">
-                    <span class="wishlist">❤️</span>
-                    <img src="product4.jpg" alt="Product 4">
-                    <p class="product-name">Golden Goddess Highlighter</p>
-                    <p class="product-price">$25.00</p>
-                    <a href="#" class="end-deal">End Deal</a>
-                </div>
-
-                <div class="product-card">
-                    <span class="wishlist">❤️</span>
-                    <img src="product4.jpg" alt="Product 4">
-                    <p class="product-name">Golden Goddess Highlighter</p>
-                    <p class="product-price">$25.00</p>
-                    <a href="#" class="end-deal">End Deal</a>
-                </div>
+                
                 
             </div>
-            <button class="nav-button">▶</button>
+            <button class="nav-button right" onclick="moveCarousel(1)">▶</button>
         </div>
     </section>
         <!--end container-->
@@ -322,78 +303,26 @@
     <section class="section-white">
     
       <!--begin container-->
-      <div class="container"> 
-
-            <!--begin row-->
-            <div class="row">
-            
-                <!--begin col-md-6-->
-                <div class="col-md-6 wow slideInLeft">
-                                    
-                    <!--begin carousel1-->
-                    <div id="myCarousel2" class="carousel carousel1 slide" data-interval="true">
-                        
-                        <!--begin carousel-inner-->
-                        <div class="carousel-inner">
-                        
-                            <!--begin carousel item-->
-                            <div class="item active">
-                            
-                                <!--begin image-wrapper-->
-                                <div class="image-wrapper">
-                                    <img src="http://placehold.it/800x530" alt="picture" class="width-100">
-                                </div>
-                                <!--end image-wrapper-->
-                                
-                            </div>
-                            <!--end carousel item-->
-                            
-                            <!--begin carousel item-->
-                            <div class="item">
-                            
-                                <!--begin image-wrapper-->
-                                <div class="image-wrapper">
-                                    <img src="http://placehold.it/800x530" alt="picture" class="width-100">
-                                </div>
-                                <!--end image-wrapper-->
-                                
-                            </div>
-                            <!--end carousel item-->
-                                                       
-                        </div>
-                        <!--end carousel-inner-->
-                        
-                        <!-- begin carousel-indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel2" data-slide-to="1"></li>
-                        </ol>
-                        <!-- end carousel-indicators -->
-                        
-                    </div>
-                    <!--end carousel1-->
-                                            
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h2>We’re Expertise & Strategic Agency To Take Care Of Your Business</h2>
+                    <p>Met defective are allowance two perceived listening consulted contained. It chicken oh colonel pressed excited suppose to shortly.</p>
+                    <ul>
+                        <li>Become successful & superior</li>
+                        <li>Provide quick & good solution for business</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">See More</a>
                 </div>
-                <!--end col-md-6-->
-                
-                <!--begin col-md-6-->
-                <div class="col-md-6 text-center padding-top-50 padding-bottom-50 wow slideInRight">
-            
-                    <span class="comic-text">Discover</span>
-                    
-                    <h2 class="section-title">Our Chefs</h2>
-                    
-                    <p>Curabitur quas nets lacus ets nulat iaculis loremis etis nisle varius vitae seditum fugiatum ligula aliquam qui sequi. Lorem ipsum dolor sit amet, consectetur adipiscing elit rutrum eleif arcu sit aspernatur nets fugit, sed quia.</p>
-                    
-                    <a href="#" class="btn btn-lg btn-yellow scrool">MEET CHEFS</a>
-                
-                </div>
-                <!--end col-md-6-->
-                 
             </div>
-            <!--end row-->
-            
+            <div class="col-lg-6">
+                <div class="about-image">
+                    <img src="path_to_your_image.jpg" alt="About Agency Image">
+                </div>
+            </div>
         </div>
+    </div>
         <!--end container-->
         
     </section>
