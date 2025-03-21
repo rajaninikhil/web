@@ -483,3 +483,129 @@ let currentIndex = 0;
       document.getElementById(target).classList.add("active");
     });
   });
+
+
+
+
+
+
+
+
+// Function to start counting
+function startCounter(counter, speed) {
+	const target = +counter.getAttribute('data-target');
+	const increment = target / speed;
+	let count = 0;
+  
+	const updateCounter = () => {
+	  count += increment;
+	  if (count < target) {
+		counter.innerText = Math.ceil(count);
+		requestAnimationFrame(updateCounter);
+	  } else {
+		counter.innerText = target;
+	  }
+	};
+  
+	updateCounter();
+  }
+  
+  // Intersection Observer to trigger when visible
+  const counters = document.querySelectorAll('.counter');
+  const observerOptions = {
+	threshold: 0.5 // Trigger when 50% of the section is in view
+  };
+  
+  const counterSection = document.querySelector('.counter-section');
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+	entries.forEach(entry => {
+	  if (entry.isIntersecting) {
+		counters.forEach((counter, index) => {
+		  let speed = 100; // default speed
+		  if (index === 0) {
+			speed = 100; // slower for the first one
+		  }
+		  startCounter(counter, speed);
+		});
+		observer.unobserve(counterSection); // Run only once
+	  }
+	});
+  }, observerOptions);
+  
+  observer.observe(counterSection);
+  
+
+
+
+
+
+
+  const testimonialData = [
+	{
+	  text: "Parimal Incense Sticks fill my home with a calming and refreshing fragrance every day. I love how the scent instantly creates a peaceful and welcoming atmosphere.",
+	  name: "SHIPA",
+	  role: "COO, AMERIMAR ENTERPRISES, INC."
+	},
+	{
+	  text: "I have been using Parimal Incense Sticks for months now, and I can honestly say they are the best I have tried. The aroma is pure, soothing, and lasts a long time.Alice shares her incredible experience with this service, highly recommending it to others in her industry.",
+	  name: "ALICE",
+	  role: "CEO, TECHWORLD LTD."
+	},
+	{
+	  text: "Every time I light a Parimal Incense Stick, it transforms the space into a serene sanctuary. The fragrances are gentle yet effective and perfect for meditation.",
+	  name: "JOHN DOE",
+	  role: "MARKETING HEAD, CREATIVE AGENCY"
+	},
+	{
+	  text: "Parimal Incense Sticks are my go-to choice for creating a relaxing environment at home. The fragrances are natural, pleasant, and linger for hours without being overpowering.",
+	  name: "EMMA",
+	  role: "CTO, INNOVATECH"
+	},
+	{
+	  text: "Whether it's morning prayer or evening relaxation, Parimal Incense Sticks have become a daily ritual. Their calming effect helps me focus and feel at peace.",
+	  name: "MICHAEL",
+	  role: "PROJECT MANAGER, BUILDPRO"
+	},
+	{
+	  text: "I highly recommend Parimal Incense Sticks to anyone looking for a genuine and lasting fragrance. They have made my home smell divine and uplift my mood instantly.",
+	  name: "SOPHIA",
+	  role: "FREELANCE DESIGNER"
+	},
+	{
+	  text: "Lighting Parimal Incense Sticks has become an essential part of my daily routine. The rich and natural aroma creates an atmosphere of tranquility and helps me unwind after a long day.",
+	  name: "DAVID",
+	  role: "FOUNDER, STARTUP X"
+	},
+	{
+		text: "I’ve tried many incense brands, but Parimal stands out for its quality and lasting fragrance. It fills my meditation space with a pure, soothing scent that helps me stay focused and calm.",
+		name: "GOLIATH",
+		role: "FOUNDER, STARTUP A"
+	  },
+	{
+		text: "Parimal Incense Sticks offer a perfect balance of tradition and purity. Every stick burns evenly, releasing a gentle fragrance that instantly uplifts the mood in my home.",
+		name: "SOMEONE",
+		role: "FOUNDER, STARTUP B"
+	  }
+  ];
+  
+  const thumbnails = document.querySelectorAll('.thumb');
+  const textElement = document.getElementById('testimonial-text');
+  const nameElement = document.getElementById('author-name');
+  const roleElement = document.getElementById('author-role');
+  
+  thumbnails.forEach((thumbnail, index) => {
+	thumbnail.addEventListener('click', () => {
+	  // Remove active from all thumbnails
+	  thumbnails.forEach(thumb => thumb.classList.remove('active'));
+	  // Add active to current thumbnail
+	  thumbnail.classList.add('active');
+  
+	  // Update testimonial content
+	  const testimonial = testimonialData[index];
+	  textElement.textContent = testimonial.text;
+	  nameElement.textContent = testimonial.name;
+	  roleElement.textContent = testimonial.role;
+	});
+  });
+  

@@ -2220,3 +2220,146 @@ p.contact_success_box{
     opacity: 1;
     transform: translateY(0);
 }
+
+
+
+
+
+
+
+
+
+/* stats section */
+  
+  /* Counter Section */
+  .counter-section {
+	padding: 1px 0;
+	text-align: center;
+	
+  }
+  
+  /* Counter Wrapper */
+  .counter-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 50px;
+  }
+  
+  /* Counter Box */
+  .counter-box {
+	flex: 1 1 200px;
+	 
+	
+  }
+  
+  .counter-box h2 {
+	font-size: 75px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: #ff3d00; 
+  }
+  
+  .counter-box p {
+	font-size: 25px;
+	font-weight: 500;
+	color: #ffffff; 
+  }
+  
+
+
+
+
+
+
+
+
+
+  body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #f9f9f9;
+  }
+  
+  .testimonial-area {
+	padding: 100px 20px;
+	background-color: #ffffff;
+  }
+  
+  .testimonial-inner {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+	gap: 60px;
+	flex-wrap: wrap;
+  }
+  
+  .testimonial-content {
+	flex: 1;
+	min-width: 300px;
+	position: relative;
+  }
+  
+  .quote-icon {
+	font-size: 180px;
+	color: rgba(0, 0, 0, 0.05);
+	position: absolute;
+	left: -40px;
+	top: -70px;
+	line-height: 1;
+	z-index: 0;
+  }
+  
+  .testimonial-content p {
+	font-size: 28px;
+	color: #1f1f25;
+	font-weight: 400;
+	line-height: 1.6;
+	z-index: 2;
+	position: relative;
+	margin-bottom: 30px;
+  }
+  
+  .testimonial-author h4 {
+	font-size: 16px;
+	color: #999999;
+	z-index: 2;
+	position: relative;
+  }
+  
+  #author-name {
+	color: #f81f01;
+	font-weight: 600;
+  }
+  
+  .testimonial-images {
+	flex: 1;
+	min-width: 300px;
+  }
+  
+  .testimonial-images .grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
+  }
+  
+  .testimonial-images img {
+	width: 140px;
+	height: 140px;
+	object-fit: cover;
+	border-radius: 10px;
+	opacity: 0.4;
+	transition: all 0.3s ease;
+	box-shadow: none;
+	cursor: pointer;
+  }
+  
+  .testimonial-images img.active {
+	opacity: 1;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+	transform: translateY(-10px);
+  }
+  
