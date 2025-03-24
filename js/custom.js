@@ -609,3 +609,45 @@ function startCounter(counter, speed) {
 	});
   });
   
+
+
+
+  //featured products
+  const container = document.querySelector('.product-container');
+const leftButton = document.querySelector('.nav-button.left');
+const rightButton = document.querySelector('.nav-button.right');
+
+const scrollAmount = 300; // Adjust depending on your card width
+const scrollThreshold = 5; // A small buffer to avoid rounding issues
+
+leftButton.addEventListener('click', () => {
+    if (container.scrollLeft <= scrollThreshold) {
+        // Jump to the end
+        container.scrollTo({
+            left: container.scrollWidth,
+            behavior: 'smooth'
+        });
+    } else {
+        container.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+});
+
+rightButton.addEventListener('click', () => {
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+    if (container.scrollLeft >= maxScrollLeft - scrollThreshold) {
+        // Jump to the start
+        container.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+});
