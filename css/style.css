@@ -169,7 +169,7 @@ h2.section-title.no-margin, h3.section-title.no-margin{
 span.comic-text{
 	font-size:80px;
 	line-height:60px;
-	color:#ff3d00;
+	color:#ffffff;
 	font-family: 'Tangerine', cursive;
 }
 
@@ -2422,7 +2422,7 @@ p.contact_success_box{
 	display: flex;
 	justify-content: space-between;
 	gap: 10px;
-	padding: 60px 150px;
+	padding: 20px 150px;
 	background-color: #f5d9c9;
 	flex-wrap: wrap; /* allows wrapping on small screens */
   }
@@ -2516,3 +2516,74 @@ p.contact_success_box{
 	}
   }
   
+
+
+
+
+
+  /* media */
+ 
+
+.news-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px; /* Limits width to prevent horizontal scrolling */
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.content {
+    padding: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.thinking {
+    background: #e67e22;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+
+.card:hover img {
+    transform: scale(1.05);
+	transition: ease-in-out 0.35s;
+}
