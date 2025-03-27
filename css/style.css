@@ -955,11 +955,11 @@ iframe{
 /* ========================================================== */
 
 #navbar-collapse-02 li.selected a{
-    color: #ff3d00!important;
+    color: #F57C00!important;
 }
 
 #navbar-collapse-02 .current a {
-    color: #ff3d00!important;
+    color: #F57C00!important;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -967,7 +967,7 @@ iframe{
 }
 
 .navbar-fixed-top { background-color: transparent!important;transition: background-color 1s ease 0s;}
-.navbar-fixed-top.opaque { background-color: rgba(17, 17, 17, 0.95)!important;transition: background-color 1s ease 0s;}
+.navbar-fixed-top.opaque { background-color: rgba(219, 219, 219, 0.95)!important;transition: background-color 1s ease 0s;}
 
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover{
     -webkit-transition: all 0.5s ease;
@@ -976,11 +976,15 @@ iframe{
     transition: all 0.5s ease;
 }
 
+.navbar-default .navbar-nav > li > a.page{
+	color:#000000;
+}
+
 .navbar-default .navbar-nav > li > a.purchase{
 	position:relative;
 	color:#454545;
-	background-color:#ff3d00;
-	border:2px solid #ff3d00;
+	background-color:#F57C00;
+	border:2px solid #F57C00;
 	margin-left:15px;
 	margin-right:15px;
 	padding:8px 20px;
@@ -992,9 +996,9 @@ iframe{
 }
 
 .navbar-default .navbar-nav > li > a.purchase:hover{
-	color:#fff!important;
+	color:#000!important;
 	background-color: transparent;
-	border:2px solid #fff;
+	border:2px solid #000000;
 }
 
 .navbar-default .navbar-nav > li.social > a {
@@ -1889,6 +1893,14 @@ p.contact_success_box{
 	font-family: Arial, sans-serif;
 }
 
+.featured-products h5 {
+	font-size: 18px;
+    letter-spacing: 1px;
+	color: #F57C00;
+	font-weight: 400;
+	margin-bottom: -10px;
+}
+
 .featured-products {
 	text-align: center;
 	padding: 50px 10%;
@@ -1902,77 +1914,169 @@ p.contact_success_box{
 
 .product-container {
     display: flex;
-	justify-content: flex-start;
-    gap: 40px;
+    gap: 10px;
 	overflow-x: auto;
 	white-space: nowrap;
     width: 100%;
     scroll-behavior: smooth;
-	margin: 20px; /* outside space */
-	padding: 20px 40px 20px 40px; /* Top, Right, Bottom, Left */
+	padding: 20px 0; /* Top, Right, Bottom, Left */
 }
 
 .product-container::-webkit-scrollbar {
     display: none; /* Hide scrollbar for cleaner look */
 }
 
+.product-info {
+    margin-top: 10px;
+}
 
 .product-card {
     flex: 0 0 auto; /* Stops the cards from shrinking or growing */
-    width: 250px;
-    background: white;
+    width: 300px;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 1px;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image {
+    width: 100%;
+    height: 350px; /* Adjust height */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Needed for absolute positioning of hover image */
+    overflow: hidden;
+}
+
+/* Add the hover image using the ::after pseudo-element */
+.product-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+	z-index: 0;
+}
+
+/* On hover, make the hover image visible */
+.product-image:hover::after {
+    opacity: 1;
+}
+
+
+.product-details {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
 }
 
 /* Hover effect on card */
 .product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
 }
 
 /* Zoom in image on hover */
 .product-card img {
     width: 100%;
+	border-radius: 1px;
     transition: transform 0.3s ease;
 }
 
-.product-card:hover img {
-    transform: scale(1.05);
+.product-image:hover img {
+	background-image: url('/images/prod 2.jpg'); /* Hover Image */
+}
+
+.product-image:hover .end-deal {
+    bottom: 10px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .product-name {
 	font-size: 18px;
 	font-weight: bold;
-	margin-top: 10px;
+	color: #333;
+	margin: 0;
+	padding-top: 5px;
 }
 
 .product-price {
 	color: #333;
 	font-size: 16px;
-	margin: 5px 0;
+	margin: 1px, 0px, 20px, 0px;
+	padding-top: 10px;
 }
 
 .end-deal {
-	display: block;
-	background: #ff3d00;
-	color: black;
-	text-decoration: none;
-	padding: 8px 15px;
-	border-radius: 5px;
-	font-weight: bold;
-	margin: 10px auto;
-	width: 80%;
-	transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: -50px; /* Start hidden below */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    padding: 12px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: absolute; /* Make sure it's positioned relative to .product-image */
+    overflow: hidden;
+    z-index: 1;
 }
 
-.end-deal:hover {
-	background-color: #ff3d00;
+/* Show the button on hover and slide it up */
+.product-image:hover .end-deal {
+    bottom: 20px; /* Moves up from the bottom */
+    opacity: 1;
+    visibility: visible;
 }
+
+/* Background Fill Effect */
+.end-deal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F57C00; /* Fill color */
+    transform: translateY(100%); /* Initially hidden */
+    transition: transform 0.25s ease-in-out;
+    z-index: 0;
+    border-radius: 0px;
+	transform-origin: bottom left; /* Starting point */
+}
+
+/* Ensure text stays on top */
+.end-deal span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Activate the fill effect on hover */
+.end-deal:hover::before {
+    transform: translateY(0); /* Fill effect moves in */
+}
+
 
 .navigation {
 	display: flex;
@@ -1986,24 +2090,31 @@ p.contact_success_box{
 	height: 50px;
 	background-color: #ffffff; /* Button color */
 	color: #333; /* Icon color */
-	border: 2px solid #ff3d00; /* Border color */
+	border: 2px solid #ddd; /* Border color */
 	border-radius: 50%; /* Makes it a perfect circle */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 	transition: all 0.3s ease;
 	font-size: 18px; /* Arrow size */
 	position: relative;
   }
+
+  .nav-button.right {
+    margin-left: 20px; /* Adjust the value as needed */
+}
+
+.nav-button.left {
+    margin-right: 5px; /* Adjust the value as needed */
+}
+
   
   /* Hover effect */
   .nav-button:hover {
 	background-color: #ff3d00;
 	color: #fff; /* Icon color on hover */
 	transform: scale(1.1); /* Slight zoom on hover */
-	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   }
   
   /* Active click effect */

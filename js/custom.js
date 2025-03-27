@@ -654,3 +654,37 @@ rightButton.addEventListener('click', () => {
 
 
 
+
+// hover image switching
+document.querySelectorAll(".product-image").forEach((product) => {
+    const defaultImg = product.getAttribute("data-default");
+    const hoverImg = product.getAttribute("data-hover");
+
+    // Set initial background image
+    product.style.backgroundImage = `url('${defaultImg}')`;
+    product.style.position = "relative"; // Ensure proper stacking
+
+    // Create a pseudo overlay to handle fading
+    const fadeImg = document.createElement("div");
+    fadeImg.style.position = "absolute";
+    fadeImg.style.top = "0";
+    fadeImg.style.left = "0";
+    fadeImg.style.width = "100%";
+    fadeImg.style.height = "100%";
+    fadeImg.style.backgroundImage = `url('${hoverImg}')`;
+    fadeImg.style.backgroundSize = "cover";
+    fadeImg.style.backgroundPosition = "center";
+    fadeImg.style.opacity = "0";
+    fadeImg.style.transition = "opacity 0.3s ease-in-out";
+    fadeImg.style.pointerEvents = "none"; // Prevent blocking interactions
+
+    product.appendChild(fadeImg);
+
+    product.addEventListener("mouseenter", function () {
+        fadeImg.style.opacity = "1"; // Fade in hover image
+    });
+
+    product.addEventListener("mouseleave", function () {
+        fadeImg.style.opacity = "0"; // Fade back to default
+    });
+});
