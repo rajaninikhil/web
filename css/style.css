@@ -951,7 +951,7 @@ iframe{
 }
 
 /* ========================================================== */
-/* 			                02. HEADER                        */
+/* 			                02.HEADER                    */
 /* ========================================================== */
 
 #navbar-collapse-02 li.selected a{
@@ -1030,6 +1030,36 @@ iframe{
 	color: #ff3d00;
 }
 
+/* Hide logo initially */
+.hidden-logo {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Show logo when scrolling */
+.show-logo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-header {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.navbar-brand {
+    padding: 5px 0 !important; /* Reduce top padding */
+    margin: 0 !important; /* Remove any default margin */
+}
+
+.navbar-brand img {
+    max-height: 150px !important; /* Adjust logo height */
+    display: block; /* Ensures no extra spacing */
+}
+
+
+
 /* ========================================================== */
 /* 			                03. FOOTER                        */
 /* ========================================================== */
@@ -1060,7 +1090,7 @@ a.top-scroll {
 	padding:7px 14px;
 	font-size:20px;
 	line-height:20px;
-	color:#fff!important;
+	color:#000000!important;
 	background-color: #F2B410;
     border-color: #F2B410;
 	transition: all .50s ease-in-out;
@@ -1076,7 +1106,7 @@ a.top-scroll:before {
 	right: 3px;
 	bottom: 3px;
 	left: 3px;
-	border: 1px solid #fff;
+	border: 1px solid #000000;
 }
 
 a.top-scroll:hover {
@@ -1101,16 +1131,26 @@ a.top-scroll:hover {
 }
 
 .footer p, .footer a {
-	color: #ddd;
+	color: #000000;
 }
 
+
 .footer-bottom p {
-	color: #999;
+	color: #000000;
+}
+
+.address{
+	margin-bottom: 10px;
+}
+
+.address p{
+	color: #000000;
+	line-height: 10px;
 }
 
 .footer-bottom p a {
 	font-size: 16px;
-	color: #999;
+	color: #000000;
 	text-decoration:underline;
 }
 
@@ -2863,7 +2903,7 @@ h3 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #FFD700; /* Yellow background */
+    background-color: #F57C00; /* Yellow background */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2871,13 +2911,17 @@ h3 {
 }
 
 .incense-icon img {
-    width: 70%;
+    width: 100%;
     height: auto;
+}
+
+.incense-icon img:hover{
+    transform: scale(1.1);
 }
 
 .incense-item p {
     font-size: 14px;
-    color: #2D0C5E;
+    color: #000000;
     font-weight: bold;
 	line-height: 20px;
 	margin: 0;
@@ -2921,3 +2965,4 @@ video {
     max-width: 1200px;
     border-radius: 12px;
 }
+

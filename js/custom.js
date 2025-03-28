@@ -699,3 +699,19 @@ window.addEventListener("scroll", function () {
     // Set blur dynamically (10px at start, 0px when scrolled to top)
     overlay.style.backdropFilter = `blur(${10 - scrollFactor * 10}px)`;
 });
+
+
+
+
+// header - hide logo
+window.addEventListener('scroll', function () {
+	const logo = document.querySelector('.navbar-brand');
+	
+	if (window.scrollY > window.innerHeight * 0.5) {
+		logo.classList.add('show-logo'); // Show logo on scroll
+		logo.classList.remove('hidden-logo');
+	} else {
+		logo.classList.add('hidden-logo'); // Hide logo at the top
+		logo.classList.remove('show-logo');
+	}
+});
