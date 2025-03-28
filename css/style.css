@@ -2433,40 +2433,51 @@ p.contact_success_box{
 
 /* stats section */
   
-  /* Counter Section */
-  .counter-section {
-	padding: 1px 0;
-	text-align: center;
-	
-  }
-  
-  /* Counter Wrapper */
-  .counter-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 50px;
-  }
-  
-  /* Counter Box */
-  .counter-box {
-	flex: 1 1 200px;
-	 
-	
-  }
-  
-  .counter-box h2 {
-	font-size: 75px;
-	font-weight: 700;
-	margin-bottom: 10px;
-	color: #ff3d00; 
-  }
-  
-  .counter-box p {
-	font-size: 25px;
-	font-weight: 500;
-	color: #ffffff; 
-  }
+ /* Counter Section */
+.counter-section {
+    padding: 1px 0;
+    text-align: center;
+}
+
+/* Counter Wrapper */
+.counter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Counter Box */
+.counter-box {
+    flex: 1 1 200px;
+	letter-spacing: normal;
+}
+
+/* Counter Styling */
+.counter-container {
+    font-size: 75px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ff3d00;
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Align numbers and "+" properly */
+}
+
+/* Plus Symbol */
+.plus {
+    font-size: 75px;
+    font-weight: 700;
+    color: #ff3d00;
+    margin-left: 5px; /* Space between number and "+" */
+}
+
+.counter-box p {
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
   
 
 
@@ -2839,7 +2850,7 @@ h3 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 70px;
     margin-top: 20px;
 }
 

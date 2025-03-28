@@ -493,48 +493,48 @@ tabButtons.forEach(button => {
 
 // Function to start counting
 function startCounter(counter, speed) {
-	const target = +counter.getAttribute('data-target');
-	const increment = target / speed;
-	let count = 0;
-  
-	const updateCounter = () => {
-	  count += increment;
-	  if (count < target) {
-		counter.innerText = Math.ceil(count);
-		requestAnimationFrame(updateCounter);
-	  } else {
-		counter.innerText = target;
-	  }
-	};
-  
-	updateCounter();
-  }
-  
-  // Intersection Observer to trigger when visible
-  const counters = document.querySelectorAll('.counter');
-  const observerOptions = {
-	threshold: 0.5 // Trigger when 50% of the section is in view
-  };
-  
-  const counterSection = document.querySelector('.counter-section');
-  
-  const observer = new IntersectionObserver((entries, observer) => {
-	entries.forEach(entry => {
-	  if (entry.isIntersecting) {
-		counters.forEach((counter, index) => {
-		  let speed = 100; // default speed
-		  if (index === 0) {
-			speed = 100; // slower for the first one
-		  }
-		  startCounter(counter, speed);
-		});
-		observer.unobserve(counterSection); // Run only once
-	  }
-	});
-  }, observerOptions);
-  
-  observer.observe(counterSection);
-  
+    const target = +counter.getAttribute('data-target');
+    const increment = target / speed;
+    let count = 0;
+
+    const updateCounter = () => {
+        count += increment;
+        if (count < target) {
+            counter.innerText = Math.ceil(count);
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCounter();
+}
+
+// Intersection Observer to trigger when visible
+const counters = document.querySelectorAll('.counter');
+const observerOptions = {
+    threshold: 0.5 // Trigger when 50% of the section is in view
+};
+
+const counterSection = document.querySelector('.counter-section');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            counters.forEach((counter, index) => {
+                let speed = 100; // default speed
+                if (index === 0) {
+                    speed = 100; // slower for the first one
+                }
+                startCounter(counter, speed);
+            });
+            observer.unobserve(counterSection); // Run only once
+        }
+    });
+}, observerOptions);
+
+observer.observe(counterSection);
+
 
 
 
