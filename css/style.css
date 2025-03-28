@@ -167,7 +167,7 @@ h2.section-title.no-margin, h3.section-title.no-margin{
 }
 
 span.comic-text{
-	font-size:80px;
+	font-size:60px;
 	line-height:60px;
 	color:#ffffff;
 	font-family: 'Tangerine', cursive;
@@ -262,7 +262,7 @@ iframe{
 
 .section-white{
 	background-color:#fff;
-	padding:90px 0;
+	padding:50px 0;
 }
 
 .section-grey{
@@ -1360,7 +1360,7 @@ ul.footer-list li a:hover{
 .image-section{
 	width:100%;
 	position:relative;
-	background: url('../images/pray.jpg');
+	background: url('../images/temple.jpg');
 	background-position: center center;
     background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -1369,15 +1369,23 @@ ul.footer-list li a:hover{
 	padding:190px 0 140px 0;
 }
 
-.image-section .image-overlay{
-	background: rgba(34, 34, 34, 0.40);
-	position: absolute;
-	z-index:10;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+.image-section p{
+	font-size: 30px;
+	color: #F57C00;
 }
+
+.image-section .image-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    backdrop-filter: blur(10px); /* Initially blurred */
+    transition: backdrop-filter 0.2s ease-out;
+}
+
 
 .image-section-inside{
 	position:relative;
@@ -1413,7 +1421,7 @@ ul.footer-list li a:hover{
 .home-menu-section{
 	width:100%;
 	position:relative;
-	background: url(../images/growth.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/metrics.jpg) 50% 0 no-repeat fixed;
     background-size: cover;
 	color: white;
 	margin: 0 auto;
@@ -2129,7 +2137,7 @@ p.contact_success_box{
 
 
 
-/* Container & Layout */
+/* About Parimal */
 .about-agency {
 	padding: 80px 0;
 	background-color: #fff;
@@ -2138,9 +2146,10 @@ p.contact_success_box{
   .about-content {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-start; /* Stick content to the top */
 	justify-content: space-between;
 	gap: 40px;
+	margin-top: 60px;
   }
   
   .about-image {
@@ -2156,14 +2165,16 @@ p.contact_success_box{
   .about-text {
 	flex: 1;
 	min-width: 300px;
+	justify-content: flex-start;
+	min-height: 525px; /* Adjust based on the tallest content */
   }
   
-  .subtitle {
+  .about-text .subtitle {
 	display: block;
 	color: rgba(255, 123, 0, 0.8);
-	font-weight: 700;
-	margin-bottom: 10px;
+	font-weight: 400;
 	font-size: 18px;
+	margin-bottom: -10px;
   }
   
   .about-text h2 {
@@ -2171,12 +2182,13 @@ p.contact_success_box{
 	font-weight: 800;
 	color: #333;
 	margin-bottom: 15px;
-	line-height: 1.4;
+	line-height: 1;
+	letter-spacing: normal;
   }
   
   .about-text p {
 	color: #666;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	line-height: 1.8;
   }
   
@@ -2199,35 +2211,47 @@ p.contact_success_box{
   }
   
   .tab-button.active {
-	color: #ff3d00;
+	color: #F57C00;
   }
   
   .tab-button.active::after {
 	content: "";
 	position: absolute;
 	left: 0;
-	bottom: -5px; /* Push a little lower if needed */
+	bottom: -5px;
 	width: 100%;
 	height: 3px;
-	background-color: #ff3d00;
+	background-color: #F57C00;
 	border-radius: 2px;
   }
   
+  /* Tab Content Wrapper */
+  .tab-wrapper {
+	min-height: 150px; /* Set a minimum height to prevent layout shift */
+	position: relative;
+	width: 100%;
+  }
   
   /* Tab Content */
   .tab-content {
 	display: none;
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
   }
   
   .tab-content.active {
 	display: block;
+	opacity: 1;
+	position: relative;
   }
   
   /* Feature List */
   .feature-list {
 	list-style: none;
 	padding: 0;
-	margin: 20px 0;
+	margin: 10px 0;
   }
   
   .feature-list li {
@@ -2271,7 +2295,7 @@ p.contact_success_box{
 
 
 
-
+/* brands */
 .recent-works {
     text-align: center;
     padding: 60px 0;
@@ -2280,13 +2304,13 @@ p.contact_success_box{
 
 .section-header {
     margin-bottom: 40px;
-	text-align: center;
+    text-align: center;
 }
 
 .subtitle {
     font-size: 20px;
-    font-weight: 600;
-    color: rgba(255, 123, 0, 0.8);
+    font-weight: 200;
+    color: #F57C00;
 }
 
 .section-header h2 {
@@ -2302,19 +2326,22 @@ p.contact_success_box{
     margin: 0 auto;
 }
 
+/* Use CSS Grid to fit 5 items in a row */
 .work-gallery {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal-width columns */
+    gap: 15px;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
+/* Work Items */
 .work-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
-    width: 300px; /* adjust based on your layout */
+    width: 100%; /* Auto-size to fit grid */
+    max-width: 220px; /* Adjust for spacing */
 }
 
 .work-item img {
@@ -2324,27 +2351,23 @@ p.contact_success_box{
     transition: transform 0.4s ease-in-out;
 }
 
+/* Hover Overlay */
 .hover-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* Gradient from transparent (top) to red (bottom) */
     background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 0%, rgba(255, 123, 0, 0.8) 100%);
-    
     opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* content will sit at the bottom */
-    
+    justify-content: flex-end;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
     transform: scale(1.1);
-    padding: 20px; /* optional: adds some breathing space for text at the bottom */
+    padding: 20px;
 }
-
 
 .overlay-content {
     text-align: center;
@@ -2363,9 +2386,11 @@ p.contact_success_box{
     font-size: 20px;
     font-weight: 700;
     margin-top: 5px;
+	letter-spacing: normal;
+	color: #fff;
 }
 
-/* Hover States */
+/* Hover Effects */
 .work-item:hover img {
     transform: scale(1.1);
 }
@@ -2380,6 +2405,24 @@ p.contact_success_box{
     transform: translateY(0);
 }
 
+/* Responsive Fixes */
+@media (max-width: 1200px) {
+    .work-gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .work-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .work-gallery {
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row on mobile */
+    }
+}
 
 
 
@@ -2697,4 +2740,173 @@ h3 {
 .card:hover img {
     transform: scale(1.05);
 	transition: ease-in-out 0.35s;
+}
+
+
+
+
+
+
+
+/* Use-case section */
+.fragrance-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+	margin-bottom: -50px;
+	margin-top: -20px;
+}
+
+.fragrance-section h2 {
+	padding-bottom: 30px;
+}
+
+.fragrance-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.fragrance-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fragrance-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fragrance-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fragrance-item p {
+    font-size: 16px;
+    color: #2D0C5E;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.fragrance-item p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #2D0C5E;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fragrance-item:hover .fragrance-image img {
+    transform: scale(1.1);
+}
+
+.fragrance-item:hover p::after {
+    transform: scaleX(1);
+}
+
+
+
+
+/* Icons section */
+.incense-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 40px 0;
+}
+
+.incense-section h2{
+    font-weight: 600;
+	letter-spacing: normal;
+	margin-bottom: 50px;
+}
+
+.incense-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.incense-item {
+    text-align: center;
+    max-width: 150px;
+}
+
+.incense-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #FFD700; /* Yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.incense-icon img {
+    width: 70%;
+    height: auto;
+}
+
+.incense-item p {
+    font-size: 14px;
+    color: #2D0C5E;
+    font-weight: bold;
+	line-height: 20px;
+	margin: 0;
+}
+
+
+
+/* Video Section */
+.video-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 40px 0;
+}
+
+.video-section h2{
+	letter-spacing: normal;
+}
+
+.video-section .highlight {
+    color: #F57C00; /* Change this to any color you like */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 80%;
+    margin: auto;
+}
+
+.video-container:hover {
+    transform: scale(1.03);
+}
+
+video {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 12px;
 }

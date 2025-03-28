@@ -444,7 +444,7 @@ $(window).load(function(){
 });
 
 
-
+// our brands
 let currentIndex = 0;
         const productWrapper = document.querySelector(".product-wrapper");
         const productCardWidth = document.querySelector(".product-card").offsetWidth + 20; // Card width + margin
@@ -463,26 +463,26 @@ let currentIndex = 0;
 
 
 
+// about parimal
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabContents = document.querySelectorAll(".tab-content");
 
-  const tabButtons = document.querySelectorAll(".tab-button");
-  const tabContents = document.querySelectorAll(".tab-content");
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // Remove active class from all buttons
+    tabButtons.forEach(btn => btn.classList.remove("active"));
 
-  tabButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      // Remove active class from all buttons
-      tabButtons.forEach(btn => btn.classList.remove("active"));
+    // Add active class to clicked button
+    button.classList.add("active");
 
-      // Add active class to clicked button
-      button.classList.add("active");
+    // Hide all tab contents
+    tabContents.forEach(content => content.classList.remove("active"));
 
-      // Hide all tab contents
-      tabContents.forEach(content => content.classList.remove("active"));
-
-      // Show the clicked tab content
-      const target = button.getAttribute("data-tab");
-      document.getElementById(target).classList.add("active");
-    });
+    // Show the clicked tab content instantly
+    document.getElementById(button.getAttribute("data-tab")).classList.add("active");
   });
+});
+
 
 
 
@@ -543,49 +543,40 @@ function startCounter(counter, speed) {
 
   const testimonialData = [
 	{
-	  text: "Parimal Incense Sticks fill my home with a calming and refreshing fragrance every day. I love how the scent instantly creates a peaceful and welcoming atmosphere.",
-	  name: "SHIPA",
-	  role: "COO, AMERIMAR ENTERPRISES, INC."
+	  text: "Parimal Mandir's incense fills my home with an authentic, soothing fragrance that brings peace and positivity. Truly the best!",
+	  name: "RAJESH SHARMA"
 	},
 	{
-	  text: "I have been using Parimal Incense Sticks for months now, and I can honestly say they are the best I have tried. The aroma is pure, soothing, and lasts a long time.Alice shares her incredible experience with this service, highly recommending it to others in her industry.",
-	  name: "ALICE",
-	  role: "CEO, TECHWORLD LTD."
+	  text: "I've been using their incense for years, and nothing matches the purity and calming aroma. It has become a part of my daily prayers.",
+	  name: "ANITA IYER"
 	},
 	{
-	  text: "Every time I light a Parimal Incense Stick, it transforms the space into a serene sanctuary. The fragrances are gentle yet effective and perfect for meditation.",
-	  name: "JOHN DOE",
-	  role: "MARKETING HEAD, CREATIVE AGENCY"
+	  text: "The quality and natural ingredients make a huge difference. Every stick burns evenly and lasts long, creating a serene atmosphere.",
+	  name: "VIKRAM MEHTA"
 	},
 	{
-	  text: "Parimal Incense Sticks are my go-to choice for creating a relaxing environment at home. The fragrances are natural, pleasant, and linger for hours without being overpowering.",
-	  name: "EMMA",
-	  role: "CTO, INNOVATECH"
+	  text: "Their fragrances are divine! The sandalwood and lavender blends are my absolute favorites for meditation and relaxation.",
+	  name: "POOJA DESAI"
 	},
 	{
-	  text: "Whether it's morning prayer or evening relaxation, Parimal Incense Sticks have become a daily ritual. Their calming effect helps me focus and feel at peace.",
-	  name: "MICHAEL",
-	  role: "PROJECT MANAGER, BUILDPRO"
+	  text: "Parimal Mandir incense reminds me of my childhood home. The purity and craftsmanship are unmatched – truly a brand that carries tradition forward.",
+	  name: "MANOJ VERMA"
 	},
 	{
-	  text: "I highly recommend Parimal Incense Sticks to anyone looking for a genuine and lasting fragrance. They have made my home smell divine and uplift my mood instantly.",
-	  name: "SOPHIA",
-	  role: "FREELANCE DESIGNER"
+	  text: "Parimal Mandir's incense has a magical essence that fills my home with warmth and tranquility. It's perfect for unwinding after a long day",
+	  name: "PRIYA NAIR"
 	},
 	{
-	  text: "Lighting Parimal Incense Sticks has become an essential part of my daily routine. The rich and natural aroma creates an atmosphere of tranquility and helps me unwind after a long day.",
-	  name: "DAVID",
-	  role: "FOUNDER, STARTUP X"
+	  text: "The rich and authentic fragrances make every prayer session special. You can truly feel the purity in every stick.",
+	  name: "AMIT KHANNA"
 	},
 	{
-		text: "I’ve tried many incense brands, but Parimal stands out for its quality and lasting fragrance. It fills my meditation space with a pure, soothing scent that helps me stay focused and calm.",
-		name: "GOLIATH",
-		role: "FOUNDER, STARTUP A"
+		text: "I love how each incense stick has a long-lasting, soothing aroma. The jasmine and rose variants are my absolute favorites!",
+		name: "NEHA GUPTA"
 	  },
 	{
-		text: "Parimal Incense Sticks offer a perfect balance of tradition and purity. Every stick burns evenly, releasing a gentle fragrance that instantly uplifts the mood in my home.",
-		name: "SOMEONE",
-		role: "FOUNDER, STARTUP B"
+		text: "These incense sticks bring a sense of calm and spirituality to my space. The craftsmanship and natural ingredients are truly remarkable.",
+		name: "SURESH PATEL"
 	  }
   ];
   
@@ -687,4 +678,24 @@ document.querySelectorAll(".product-image").forEach((product) => {
     product.addEventListener("mouseleave", function () {
         fadeImg.style.opacity = "0"; // Fade back to default
     });
+});
+
+
+
+
+//every prayer answered scroll effect
+window.addEventListener("scroll", function () {
+    const overlay = document.querySelector(".image-section .image-overlay");
+    const section = document.querySelector(".image-section");
+    
+    if (!overlay || !section) return;
+
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionHeight = section.clientHeight;
+    
+    // Normalize scroll position (0 when at top, 1 when fully past the section)
+    let scrollFactor = Math.min(1, Math.max(0, 1 - sectionTop / sectionHeight));
+
+    // Set blur dynamically (10px at start, 0px when scrolled to top)
+    overlay.style.backdropFilter = `blur(${10 - scrollFactor * 10}px)`;
 });
