@@ -105,10 +105,10 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'AloeveraDisplay-Bold', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing:2px;
+  letter-spacing:normal;
   margin-bottom:20px;
   color: #454545;
 }
@@ -167,10 +167,10 @@ h2.section-title.no-margin, h3.section-title.no-margin{
 }
 
 span.comic-text{
-	font-size:60px;
+	font-size:50px;
 	line-height:60px;
 	color:#ffffff;
-	font-family: 'Tangerine', cursive;
+	font-family: 'Bailey', cursive;
 }
 
 p.section-subtitle{
@@ -812,7 +812,7 @@ iframe{
 	color: #fff;
 	background-color: transparent;
 	border-color: #fff;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'AloeveraDisplay-Bold', sans-serif;
 	font-weight:700;
 	padding:16px 32px;
 	font-size:13px;
@@ -1490,7 +1490,7 @@ ul.footer-list li a:hover{
 	font-size: 18px;
     line-height: 24px;
     vertical-align: bottom;
-    font-family: 'Lora', serif;
+    font-family: 'AloeveraDisplay-Bold', serif;
     font-weight: 700;
     color: #FFF;
     float: left;
@@ -1595,7 +1595,7 @@ h2.menu-section-title::after{
 	font-size: 18px;
     line-height: 22px;
     vertical-align: bottom;
-    font-family: 'Lora', serif;
+    font-family: 'AloeveraDisplay-Bold', serif;
     font-weight: 700;
     float: left;
     letter-spacing: 2px;
@@ -1674,7 +1674,7 @@ h3.blog-title{
 }
 
 h3.blog-title a{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'AloeveraDisplay-Bold', sans-serif;
     font-weight: 700;
 	font-size:21px;
 	color:#252525;
@@ -1938,7 +1938,7 @@ p.contact_success_box{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: Arial, sans-serif;
+	font-family: AloeveraDisplay-Regular, sans-serif;
 }
 
 .featured-products h5 {
@@ -2530,7 +2530,7 @@ p.contact_success_box{
 /* testimonials */
 
   body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'AloeveraDisplay-Regular', sans-serif;
 	margin: 0;
 	padding: 0;
 	background: #f9f9f9;
@@ -2802,7 +2802,7 @@ h3 {
 /* Use-case section */
 .fragrance-section {
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: AloeveraDisplay-Regular, sans-serif;
 	margin-bottom: -50px;
 	margin-top: -20px;
 }
@@ -2876,7 +2876,7 @@ h3 {
 /* Icons section */
 .incense-section {
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: AloeveraDisplay-Regular, sans-serif;
     margin: 40px 0;
 }
 
@@ -2932,7 +2932,7 @@ h3 {
 /* Video Section */
 .video-section {
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: AloeveraDisplay-Regular, sans-serif;
     margin: 40px 0;
 }
 
