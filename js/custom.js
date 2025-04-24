@@ -715,3 +715,27 @@ window.addEventListener('scroll', function () {
 		logo.classList.remove('show-logo');
 	}
 });
+
+
+
+
+// about history
+// Scroll-based timeline progress
+document.addEventListener('DOMContentLoaded', () => {
+	const timeline = document.querySelector('.section-timeline');
+	const progress = document.querySelector('.timeline-progress');
+  
+	function updateProgress() {
+	  const rect = timeline.getBoundingClientRect();
+	  const windowHeight = window.innerHeight;
+	  const totalHeight = timeline.offsetHeight;
+	  const scrollTop = window.scrollY;
+	  const offsetTop = timeline.offsetTop;
+	  const progressHeight = Math.min((scrollTop + windowHeight - offsetTop) / totalHeight, 1) * totalHeight;
+	  progress.style.height = `${progressHeight}px`;
+	}
+  
+	window.addEventListener('scroll', updateProgress);
+	window.addEventListener('resize', updateProgress);
+	updateProgress();
+  });

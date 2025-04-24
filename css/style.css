@@ -2973,3 +2973,95 @@ video {
     border-radius: 12px;
 }
 
+
+
+
+
+/* about - history */
+..section-timeline {
+	padding: 60px 20px;
+	background-color: #ffffff;
+	position: relative;
+  }
+  
+  .timeline-container {
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+  }
+  
+  .timeline-line {
+	position: absolute;
+	left: 30px;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background-color: #e0e0e0;
+  }
+  
+  .timeline-progress {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	background-color: #007bff;
+	height: 0;
+  }
+  
+  .timeline-content {
+	margin-left: 60px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+  }
+  
+  .timeline-step {
+	position: relative;
+  }
+  
+  .step-number {
+	position: absolute;
+	left: -60px;
+	top: 0;
+	background-color: #007bff;
+	color: #ffffff;
+	padding: 10px 15px;
+	border-radius: 50%;
+	font-weight: bold;
+  }
+  
+  .step-title {
+	margin: 0 0 10px;
+	font-size: 1.5rem;
+	color: #333333;
+  }
+  
+  .step-description {
+	margin: 0;
+	color: #666666;
+	line-height: 1.6;
+  }
+  
+  @media (max-width: 600px) {
+	.timeline-container {
+	  flex-direction: column;
+	}
+  
+	.timeline-line {
+	  left: 20px;
+	}
+  
+	.timeline-content {
+	  margin-left: 40px;
+	}
+  
+	.step-number {
+	  left: -40px;
+	  padding: 8px 12px;
+	}
+  
+	.step-title {
+	  font-size: 1.2rem;
+	}
+  }
