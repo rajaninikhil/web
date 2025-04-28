@@ -3085,3 +3085,158 @@ video {
 	color: #aaa;
   }
   
+
+
+
+
+
+  /*team*/
+  .find-passion-section {
+	display: flex;
+	align-items: center;
+	padding: 60px 300px;
+	background: #fff;
+	gap: 40px;
+	flex-wrap: wrap;
+  }
+  
+  .text-side {
+	flex: 1;
+	min-width: 200px;
+  }
+  
+  .text-side h1 {
+	font-size: 48px;
+	font-weight: 700;
+	color: #1a1a1a;
+	line-height: 1.2;
+  }
+  
+  
+  .cards-side {
+	display: flex;
+	flex: 3;
+	min-width: 300px;
+	gap: 20px;
+  }
+  
+  .card {
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #eee;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 400px;
+  }
+  
+  .card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+  }
+  
+  .main-card {
+	flex: 3;
+  }
+  
+  .small-card {
+	flex: 0.5;
+  }
+  
+  .card-content, .small-card-label {
+	position: relative;
+	z-index: 2;
+	padding: 20px;
+	color: #fff;
+  }
+  
+  .small-card-label {
+	background: #1a1a1a;
+	text-align: center;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	font-size: 18px;
+	padding: 10px;
+  }
+  
+  /* HOVER EFFECT */
+  .cards-side:hover .card {
+	flex: 0.5;
+  }
+  
+  .cards-side .card:hover {
+	flex: 2;
+  }
+  
+
+
+
+
+  /* Popup Modal Styles */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.7);
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .modal-content {
+	background: #fff;
+	padding: 40px;
+	border-radius: 20px;
+	text-align: center;
+	max-width: 500px;
+	width: 90%;
+	position: relative;
+	animation: fadeIn 0.3s ease;
+  }
+  
+  .modal-content img {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-bottom: 20px;
+  }
+  
+  .modal-content h2 {
+	margin: 10px 0;
+	font-size: 24px;
+	color: #333;
+  }
+  
+  .modal-content p {
+	font-size: 16px;
+	color: #666;
+  }
+  
+  .close-btn {
+	position: absolute;
+	top: 20px;
+	right: 25px;
+	font-size: 28px;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer;
+  }
+  
+  /* Simple fade animation */
+  @keyframes fadeIn {
+	from {opacity: 0; transform: scale(0.8);}
+	to {opacity: 1; transform: scale(1);}
+  }
+  
