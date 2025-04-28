@@ -2887,6 +2887,7 @@ h3 {
     margin: 40px 0;
 }
 
+
 .incense-section h2{
     font-weight: 600;
 	letter-spacing: normal;
@@ -2901,6 +2902,14 @@ h3 {
     margin-top: 20px;
 }
 
+.incense-container2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
 .incense-item {
     text-align: center;
     max-width: 150px;
@@ -2910,7 +2919,18 @@ h3 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #F57C00; /* Yellow background */
+    background-color: #F57C00; /* Icon background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.incense-icon2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ffedda; /* icon background */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2978,90 +2998,90 @@ video {
 
 
 /* about - history */
-..section-timeline {
-	padding: 60px 20px;
-	background-color: #ffffff;
-	position: relative;
+.features-section {
+	max-width: 1000px;
+	margin: 60px auto;
+	font-family: 'Helvetica Neue', sans-serif;
+	color: #000;
+	text-align: center;
   }
   
-  .timeline-container {
-	position: relative;
-	max-width: 800px;
-	margin: 0 auto;
-	display: flex;
+  .features-section h1 {
+	font-size: 2em;
+	margin-bottom: 60px;
   }
   
-  .timeline-line {
-	position: absolute;
-	left: 30px;
-	top: 0;
-	bottom: 0;
-	width: 4px;
-	background-color: #e0e0e0;
-  }
-  
-  .timeline-progress {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 4px;
-	background-color: #007bff;
-	height: 0;
-  }
-  
-  .timeline-content {
-	margin-left: 60px;
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-  }
-  
-  .timeline-step {
-	position: relative;
-  }
-  
-  .step-number {
-	position: absolute;
-	left: -60px;
-	top: 0;
-	background-color: #007bff;
-	color: #ffffff;
-	padding: 10px 15px;
-	border-radius: 50%;
+  .features-section h1 strong {
 	font-weight: bold;
   }
   
-  .step-title {
-	margin: 0 0 10px;
-	font-size: 1.5rem;
-	color: #333333;
+  .timeline-wrapper {
+	display: flex;
+	justify-content: center;
   }
   
-  .step-description {
-	margin: 0;
-	color: #666666;
-	line-height: 1.6;
+  .timeline {
+	position: relative;
+	border-left: 2px solid #ddd;
+	padding-left: 40px;
+	text-align: left;
   }
   
-  @media (max-width: 600px) {
-	.timeline-container {
-	  flex-direction: column;
-	}
-  
-	.timeline-line {
-	  left: 20px;
-	}
-  
-	.timeline-content {
-	  margin-left: 40px;
-	}
-  
-	.step-number {
-	  left: -40px;
-	  padding: 8px 12px;
-	}
-  
-	.step-title {
-	  font-size: 1.2rem;
-	}
+  .step {
+	position: relative;
+	margin-bottom: 80px;
   }
+  
+  .step::before {
+	content: '';
+	position: absolute;
+	left: -7px;
+	top: 5px;
+	width: 14px;
+	height: 14px;
+	background-color: black;
+	border-radius: 50%;
+  }
+  
+  .step.inactive::before {
+	background-color: #ccc;
+  }
+  
+  .label {
+	position: absolute;
+	left: -120px;
+	top: 0;
+	background: #f0f0f0;
+	padding: 5px 10px;
+	border-radius: 12px;
+	font-size: 0.8em;
+	color: #333;
+  }
+  
+  .title {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+  }
+  
+  .step1 .title {
+	color: #4a5cff;
+  }
+  
+  .step2 .title {
+	color: #b264ff;
+  }
+  
+  .step3 .title {
+	color: #ccc;
+  }
+  
+  .desc {
+	font-size: 0.95em;
+	color: #333;
+  }
+  
+  .step3 .desc {
+	color: #aaa;
+  }
+  
