@@ -7,39 +7,39 @@ const closeBtn = document.querySelector('.close-btn');
 
 const cardData = [
   {
-    img: 'https://via.placeholder.com/400x400?text=Main',
-    name: 'Emily Johnson',
-    description: 'Expert writing coach with 10+ years of experience.'
+    img: '../images/1.jpeg',
+    name: 'Dummy',
+    description: 'Do not add anything'
   },
   {
-    img: 'https://via.placeholder.com/400x400?text=1',
-    name: 'James Smith',
-    description: 'Specialist in journalism and creative writing.'
+    img: '../images/1.jpeg',
+    name: 'S. Jaganath',
+    description: 'S. Jaganath leads Parimal Mandir’s customer operations, including marketing and partnerships. With a deep commitment to building India’s most loved incense brand, he combines strong leadership with a humble, spiritually grounded approach to life. A true marketing expert and a firm believer in the power of people, he is dedicated to keeping his team inspired and motivated. Known for his philanthropic spirit and generosity, S. Jaganath sets a powerful example for aspiring entrepreneurs everywhere.'
   },
   {
-    img: 'https://via.placeholder.com/400x400?text=2',
-    name: 'Laura Williams',
-    description: 'Business mentor for entrepreneurs.'
+    img: '../images/2.jpg',
+    name: 'S.G. Radhakrishna',
+    description: "As Parimal’s Master Perfumer, S.G. Radhakrishna is known for his visionary leadership and innovative approach. Joining the family business after completing his education, he quickly made his mark with his business insight. He oversees all revenue and manufacturing operations, including Parimal's infrastructure development. Thanks to his dedication, Parimal now boasts over 1,00,000 sq. feet of manufacturing space. His entrepreneurial vision has been key in driving the company’s growth, ensuring continuous improvements and keeping Parimal ahead in the competitive global market."
   },
   {
-    img: 'https://via.placeholder.com/400x400?text=3',
-    name: 'Oliver Brown',
-    description: 'Head of Design Team.'
+    img: '../images/3.jpeg',
+    name: 'S.G. Raghuram',
+    description: "S.G. Raghuram manages all dispatches and inventory across Parimal's locations, as well as overseeing daily operations. His entrepreneurial skills and business acumen have driven Parimal to new heights. Under his leadership, he has fostered a work environment that focuses on performance, customer satisfaction, and innovation."
   },
   {
-    img: 'https://via.placeholder.com/400x400?text=4',
-    name: 'Sophia Davis',
-    description: 'Marketing strategist and creative head.'
+    img: '../images/1.jpeg',
+    name: 'S.G. Vijay',
+    description: 'S.G. Vijay leads Parimal’s international operations, focusing on expanding strategic partnerships in Europe, the Middle East, and Africa. A strong negotiator, he has used his deep understanding of emerging trends and exceptional business skills to drive growth and success in these markets.'
   },
   {
-    img: 'https://via.placeholder.com/400x400?text=5',
-    name: 'Michael Wilson',
-    description: 'Financial expert and coach.'
+    img: '../images/2.jpg',
+    name: 'S.G. Ajay',
+    description: 'S.G. Ajay heads the printing and packaging division at Parimal, bringing creativity and innovation to every project. With over 10 national awards for excellence in printing, he excels in investing in people and expanding business capabilities. Despite his achievements, he remains humble, grounded in traditional values while embracing modern thinking.'
   },
   {
-    img: 'https://via.placeholder.com/400x400?text=6',
-    name: 'Olivia Martinez',
-    description: 'Sales team leader with global outreach.'
+    img: '../images/3.jpeg',
+    name: 'Swaraj R. Sunku',
+    description: "A third-generation entrepreneur, Swaraj leads Parimal's product team, driving innovation and business growth both nationally and internationally. As a professional perfumer, he is behind Parimal’s new product development and the launch of the company’s master brand strategy. His focus on R&D and continuous improvement has made him a key driver of the company’s success and expansion into new ventures."
   }
 ];
 
