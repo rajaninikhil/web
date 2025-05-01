@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Section</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .find-passion-section {
+      display: flex;
+      padding: 60px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .text-side {
+      flex: 1;
+    }
+
+    .text-side h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .cards-side {
+      display: flex;
+      flex: 3;
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #eee;
+      transition: all 0.5s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 400px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .main-card {
+      flex: 3;
+    }
+
+    .small-card {
+      flex: 0.5;
+    }
+
+    .card-content, .small-card-label {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .small-card-label {
+      background: #1a1a1a;
+      text-align: center;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    .cards-side:hover .card {
+      flex: 0.5;
+    }
+
+    .cards-side .card:hover {
+      flex: 2;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .modal-content h2 {
+      margin: 10px 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <section class="find-passion-section">
+    <div class="text-side">
+      <h1>Our<br>Team</h1>
+    </div>
+    <div class="cards-side">
+      <div class="card main-card active">
+        <img src="https://via.placeholder.com/400x400?text=Main" alt="Main">
+        <div class="card-content">
+          <h2>Writing Course</h2>
+          <div class="topics">100<br><span>TOPICS</span></div>
+        </div>
+      </div>
+      <div class="card small-card">
+        <img src="https://via.placeholder.com/400x400?text=1" alt="Card 1">
+        <div class="small-card-label">Writing</div>
+      </div>
+      <div class="card small-card">
+        <img src="https://via.placeholder.com/400x400?text=2" alt="Card 2">
+        <div class="small-card-label">Business</div>
+      </div>
+      <div class="card small-card">
+        <img src="https://via.placeholder.com/400x400?text=3" alt="Card 3">
+        <div class="small-card-label">Design</div>
+      </div>
+      <div class="card small-card">
+        <img src="https://via.placeholder.com/400x400?text=4" alt="Card 4">
+        <div class="small-card-label">Marketing</div>
+      </div>
+      <div class="card small-card">
+        <img src="https://via.placeholder.com/400x400?text=5" alt="Card 5">
+        <div class="small-card-label">Finance</div>
+      </div>
+      <div class="card small-card">
+        <img src="https://via.placeholder.com/400x400?text=6" alt="Card 6">
+        <div class="small-card-label">Sales</div>
+      </div>
+
+      <!-- Modal -->
+      <div id="popupModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <img id="popupImage" src="" alt="Profile" />
+          <h2 id="popupName">Name</h2>
+          <p id="popupDescription">Description</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const cards = document.querySelectorAll('.cards-side .card');
+    const popupModal = document.getElementById('popupModal');
+    const popupImage = document.getElementById('popupImage');
+    const popupName = document.getElementById('popupName');
+    const popupDescription = document.getElementById('popupDescription');
+    const closeBtn = document.querySelector('.close-btn');
+
+    const cardData = [
+      {
+        img: 'https://via.placeholder.com/400x400?text=Main',
+        name: 'Emily Johnson',
+        description: 'Expert writing coach with 10+ years of experience.'
+      },
+      {
+        img: 'https://via.placeholder.com/400x400?text=1',
+        name: 'James Smith',
+        description: 'Specialist in journalism and creative writing.'
+      },
+      {
+        img: 'https://via.placeholder.com/400x400?text=2',
+        name: 'Laura Williams',
+        description: 'Business mentor for entrepreneurs.'
+      },
+      {
+        img: 'https://via.placeholder.com/400x400?text=3',
+        name: 'Oliver Brown',
+        description: 'Head of Design Team.'
+      },
+      {
+        img: 'https://via.placeholder.com/400x400?text=4',
+        name: 'Sophia Davis',
+        description: 'Marketing strategist and creative head.'
+      },
+      {
+        img: 'https://via.placeholder.com/400x400?text=5',
+        name: 'Michael Wilson',
+        description: 'Financial expert and coach.'
+      },
+      {
+        img: 'https://via.placeholder.com/400x400?text=6',
+        name: 'Olivia Martinez',
+        description: 'Sales team leader with global outreach.'
+      }
+    ];
+
+    cards.forEach((card, index) => {
+      card.addEventListener('click', function () {
+        const data = cardData[index];
+        if (data) {
+          popupImage.src = data.img;
+          popupName.textContent = data.name;
+          popupDescription.textContent = data.description;
+          popupModal.style.display = 'flex';
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popupModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === popupModal) {
+        popupModal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
