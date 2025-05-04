@@ -740,7 +740,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	updateProgress();
   });
 
-
-
-
-  
