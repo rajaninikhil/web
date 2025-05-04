@@ -2,172 +2,265 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Factory Section</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timeline Scroll Animation</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #111;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f1f3f9;
-      color: #000;
-    }
-
-    .section {
-      width: 100%;
-      background-color: white;
-    }
-
-    .image-container {
-      width: 100%;
-      overflow: hidden;
+    .timeline-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 20px;
       position: relative;
-      height: 400px;
     }
 
-    .image-container img {
+    .timeline-header {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 80px;
+    }
+
+    .timeline-header strong {
+      font-weight: 700;
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
       position: absolute;
-      height: 100%;
-      width: auto;
-      left: 0;
+      left: 50%;
       top: 0;
-      transition: left 0.6s ease-in-out;
+      bottom: 0;
+      width: 2px;
+      background: #ccc;
+      transform: translateX(-50%);
+      z-index: 0;
     }
 
-    .tabs {
+    .timeline-progress {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      background: #111;
+      transform: translateX(-50%);
+      height: 0;
+      z-index: 1;
+      transition: height 0.1s ease-out;
+    }
+
+    .timeline-item {
       display: flex;
-      justify-content: center;
-      gap: 40px;
-      border-bottom: 2px solid #1d1d1f;
-      padding: 24px 0 0;
-      background-color: #f1f3f9;
-    }
-
-    .tabs span {
-      font-size: 16px;
-      color: #000;
-      cursor: pointer;
-      padding-bottom: 8px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 80px;
       position: relative;
+      z-index: 2;
     }
 
-    .tabs span.active {
-      color: #ff6a00;
+    .timeline-left,
+    .timeline-right {
+      width: 45%;
+    }
+
+    .timeline-left {
+      text-align: right;
+    }
+
+    .timeline-step {
+      display: inline-block;
+      background: #eee;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .timeline-title {
+      font-size: 1.25rem;
       font-weight: 600;
     }
 
-    .tabs span.active::after {
-      content: "";
+    .timeline-title.step1 { color: #5357f6; }
+    .timeline-title.step2 { color: #9b59b6; }
+    .timeline-title.step3 { color: #76c7cf; }
+
+    .timeline-circle {
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #ff6a00;
-    }
-
-    .content {
-      padding: 40px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .content h2 {
-      font-size: 32px;
-      font-weight: 800;
-    }
-
-    .arrows {
-      display: flex;
-      gap: 16px;
-    }
-
-    .arrows button {
-      width: 36px;
-      height: 36px;
-      border: 1px solid #000;
+      left: 50%;
+      top: 6px;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: black;
       border-radius: 50%;
-      background-color: transparent;
-      cursor: pointer;
-      font-size: 16px;
+      border: 5px solid white;
+      z-index: 3;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .timeline-left,
+      .timeline-right {
+        width: 100%;
+        text-align: center;
+      }
+
+      .timeline::before,
+      .timeline-progress {
+        left: 20px;
+        transform: none;
+      }
+
+      .timeline-circle {
+        left: 20px;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="section">
-    <div class="image-container">
-      <img id="factoryImage" src="/images/about/factry.png" alt="Factory Illustration" />
-    </div>
 
-    <div class="tabs" id="tabs">
-      <span class="active">Analyze</span>
-      <span>Define</span>
-      <span>Plan</span>
-      <span>Onboard</span>
-      <span>Connect</span>
-      <span>Manage</span>
-      <span>Refine</span>
-    </div>
+  <div class="timeline-container">
+    <h2 class="timeline-header">
+      Discover the <strong>unique features</strong><br />
+      that will make your business grow
+    </h2>
 
-    <div class="content">
-      <h2 id="content-heading">Analyze Your Customer Footprint</h2>
-      <div class="arrows">
-        <button id="prevBtn">&larr;</button>
-        <button id="nextBtn">&rarr;</button>
+    <div class="timeline" id="timeline">
+      <div class="timeline-progress" id="timelineProgress"></div>
+
+      <!-- Step 1 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 1</div>
+          <div class="timeline-title step1">Product analytics</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Get detailed reports on the analytics features and break down your operations costs.</p>
+        </div>
       </div>
+
+      <!-- Step 2 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 2</div>
+          <div class="timeline-title step2">Multiple integrations</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Integrate any third party tool and get extra powers right inside your application.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 3</div>
+          <div class="timeline-title step3">Super magic AI</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Communication is the key so make sure you always stay in touch with your internal team to develop more insights.</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 1</div>
+          <div class="timeline-title step1">Product analytics</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Get detailed reports on the analytics features and break down your operations costs.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 2</div>
+          <div class="timeline-title step2">Multiple integrations</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Integrate any third party tool and get extra powers right inside your application.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 3</div>
+          <div class="timeline-title step3">Super magic AI</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Communication is the key so make sure you always stay in touch with your internal team to develop more insights.</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 1</div>
+          <div class="timeline-title step1">Product analytics</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Get detailed reports on the analytics features and break down your operations costs.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-step">STEP 2</div>
+          <div class="timeline-title step2">Multiple integrations</div>
+        </div>
+        <div class="timeline-circle"></div>
+        <div class="timeline-right">
+          <p>Integrate any third party tool and get extra powers right inside your application.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
   <script>
-    const tabLabels = [
-      "Analyze", "Define", "Plan", "Onboard", "Connect", "Manage", "Refine"
-    ];
-    const tabDescriptions = [
-      "Analyze Your Customer Footprint",
-      "Define Your Business Goals",
-      "Plan Your Strategy Effectively",
-      "Onboard With Ease",
-      "Connect With Your Audience",
-      "Manage Everything Seamlessly",
-      "Refine Your Process Continuously"
-    ];
+    const progressLine = document.getElementById('timelineProgress');
+    const timeline = document.getElementById('timeline');
 
-    const tabs = document.querySelectorAll(".tabs span");
-    const heading = document.getElementById("content-heading");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const image = document.getElementById("factoryImage");
+    window.addEventListener('scroll', () => {
+      const timelineTop = timeline.offsetTop;
+      const timelineHeight = timeline.offsetHeight;
+      const scrollY = window.scrollY + window.innerHeight;
 
-    let currentIndex = 0;
+      const maxHeight = (scrollY/1.75) - timelineTop;
+      const clampedHeight = Math.min(timelineHeight, Math.max(0, maxHeight));
 
-    function setActiveTab(index) {
-      tabs.forEach(tab => tab.classList.remove("active"));
-      tabs[index].classList.add("active");
-      heading.textContent = tabDescriptions[index];
-      image.style.left = `-${index * 10}%`; // scrolls image slowly to the right
-      currentIndex = index;
-    }
-
-    tabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => setActiveTab(index));
-    });
-
-    prevBtn.addEventListener("click", () => {
-      const newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-      setActiveTab(newIndex);
-    });
-
-    nextBtn.addEventListener("click", () => {
-      const newIndex = (currentIndex + 1) % tabs.length;
-      setActiveTab(newIndex);
+      progressLine.style.height = `${clampedHeight}px`;
     });
   </script>
+
 </body>
 </html>

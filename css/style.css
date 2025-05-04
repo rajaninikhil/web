@@ -973,7 +973,7 @@ iframe{
     transition: all 0.5s ease;
 }
 
-.navbar-fixed-top { background-color: transparent!important;transition: background-color 1s ease 0s;}
+.navbar-fixed-top { background-color: #000000ab!important;transition: background-color 1s ease 0s;}
 .navbar-fixed-top.opaque { background-color: rgba(219, 219, 219, 0.95)!important;transition: background-color 1s ease 0s;}
 
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover{
@@ -2998,91 +2998,126 @@ video {
 
 
 /* about - history */
-.features-section {
+.timeline-container {
 	max-width: 1000px;
-	margin: 60px auto;
-	font-family: 'Helvetica Neue', sans-serif;
-	color: #000;
+	margin: 0 auto;
+	padding: 80px 20px;
+	position: relative;
+  }
+
+  .timeline-header {
 	text-align: center;
-  }
-  
-  .features-section h1 {
-	font-size: 2em;
-	margin-bottom: 60px;
-  }
-  
-  .features-section h1 strong {
-	font-weight: bold;
-  }
-  
-  .timeline-wrapper {
-	display: flex;
-	justify-content: center;
-  }
-  
-  .timeline {
-	position: relative;
-	border-left: 2px solid #ddd;
-	padding-left: 40px;
-	text-align: left;
-  }
-  
-  .step {
-	position: relative;
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.5;
 	margin-bottom: 80px;
   }
-  
-  .step::before {
+
+  .timeline-header strong {
+	font-weight: 700;
+  }
+
+  .timeline {
+	position: relative;
+  }
+
+  .timeline::before {
 	content: '';
 	position: absolute;
-	left: -7px;
-	top: 5px;
-	width: 14px;
-	height: 14px;
-	background-color: black;
-	border-radius: 50%;
-  }
-  
-  .step.inactive::before {
-	background-color: #ccc;
-  }
-  
-  .label {
-	position: absolute;
-	left: -120px;
+	left: 50%;
 	top: 0;
-	background: #f0f0f0;
-	padding: 5px 10px;
-	border-radius: 12px;
-	font-size: 0.8em;
-	color: #333;
+	bottom: 0;
+	width: 2px;
+	background: #ccc;
+	transform: translateX(-50%);
+	z-index: 0;
   }
-  
-  .title {
+
+  .timeline-progress {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 2px;
+	background: #111;
+	transform: translateX(-50%);
+	height: 0;
+	z-index: 1;
+	transition: height 0.1s ease-out;
+  }
+
+  .timeline-item {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: 80px;
+	position: relative;
+	z-index: 2;
+  }
+
+  .timeline-left,
+  .timeline-right {
+	width: 45%;
+  }
+
+  .timeline-left {
+	text-align: right;
+  }
+
+  .timeline-step {
+	display: inline-block;
+	background: #eee;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 0.75rem;
 	font-weight: bold;
-	font-size: 1.2em;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
   }
-  
-  .step1 .title {
-	color: #4a5cff;
+
+  .timeline-title {
+	font-size: 1.25rem;
+	font-weight: 600;
   }
-  
-  .step2 .title {
-	color: #b264ff;
+
+  .timeline-title.step1 { color: #5357f6; }
+  .timeline-title.step2 { color: #9b59b6; }
+  .timeline-title.step3 { color: #76c7cf; }
+
+  .timeline-circle {
+	position: absolute;
+	left: 50%;
+	top: 6px;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 20px;
+	background: black;
+	border-radius: 50%;
+	border: 5px solid white;
+	z-index: 3;
   }
-  
-  .step3 .title {
-	color: #ccc;
-  }
-  
-  .desc {
-	font-size: 0.95em;
-	color: #333;
-  }
-  
-  .step3 .desc {
-	color: #aaa;
+
+  @media (max-width: 768px) {
+	.timeline-item {
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	}
+
+	.timeline-left,
+	.timeline-right {
+	  width: 100%;
+	  text-align: center;
+	}
+
+	.timeline::before,
+	.timeline-progress {
+	  left: 20px;
+	  transform: none;
+	}
+
+	.timeline-circle {
+	  left: 20px;
+	  transform: none;
+	}
   }
   
 
@@ -3517,3 +3552,70 @@ video {
 	color: white;
 	padding-left: 15%;
   }
+
+
+
+
+
+  /* about us landing */
+  .about-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 60px 80px;
+	max-width: 80vw;
+	margin: auto;
+	padding-top: 6%;
+  }
+
+  .about-text-content {
+	max-width: 36.5vw;
+  }
+
+
+  h1 {
+	font-size: 48px;
+	line-height: 1.2;
+	margin: 0 0 20px;
+	padding-bottom: 10px;
+  }
+
+  .about-highlight {
+	color: #F57C00;
+  }
+
+  .about-description {
+	font-size: 16px;
+	color: #4b5563;
+	line-height: 1.6;
+  }
+
+  .about-image-container {
+	flex-shrink: 0;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-image-container img {
+	display: block;
+	width: 25vw;
+	height: auto;
+  }
+
+  @media (max-width: 1024px) {
+	.container {
+	  flex-direction: column;
+	  padding: 40px;
+	  text-align: center;
+	}
+
+	.image-container {
+	  margin-top: 30px;
+	}
+  }
+
+
+
+
+
