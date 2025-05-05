@@ -3513,6 +3513,8 @@ video {
 	background-position: center;
 	transition: transform 0.7s ease;
 	z-index: 0;
+	left: -160px;
+	top: -25px;
   }
   
   .rd-card:hover .rd-card-bg {
