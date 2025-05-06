@@ -973,7 +973,7 @@ iframe{
     transition: all 0.5s ease;
 }
 
-.navbar-fixed-top { background-color: #000000ab!important;transition: background-color 1s ease 0s;}
+.navbar-fixed-top { background-color: #363636!important;transition: background-color 1s ease 0s;}
 .navbar-fixed-top.opaque { background-color: rgba(219, 219, 219, 0.95)!important;transition: background-color 1s ease 0s;}
 
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover{
@@ -3518,6 +3518,8 @@ video {
 	background-position: center;
 	transition: transform 0.7s ease;
 	z-index: 0;
+	left: -160px;
+	top: -25px;
   }
   
   .rd-card:hover .rd-card-bg {
