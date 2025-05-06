@@ -3005,16 +3005,16 @@ video {
 	position: relative;
   }
 
-  .timeline-header {
+  h1 {
+	font-size: 48px;
+	line-height: 1.6;
+	margin: 0 0 60px;
+	padding-bottom: 10px;
 	text-align: center;
-	font-size: 2rem;
-	font-weight: 600;
-	line-height: 1.5;
-	margin-bottom: 80px;
   }
 
-  .timeline-header strong {
-	font-weight: 700;
+  .timeline-highlight {
+	color: #F57C00;
   }
 
   .timeline {
@@ -3024,7 +3024,7 @@ video {
   .timeline::before {
 	content: '';
 	position: absolute;
-	left: 50%;
+	left: 45%;
 	top: 0;
 	bottom: 0;
 	width: 2px;
@@ -3035,7 +3035,7 @@ video {
 
   .timeline-progress {
 	position: absolute;
-	left: 50%;
+	left: 45%;
 	top: 0;
 	width: 2px;
 	background: #111;
@@ -3052,11 +3052,15 @@ video {
 	margin-bottom: 80px;
 	position: relative;
 	z-index: 2;
+	margin-right: 10%;
   }
 
-  .timeline-left,
-  .timeline-right {
+  .timeline-left, .timeline-right {
 	width: 45%;
+  }
+
+  .timeline-right {
+	margin-left: -30px;
   }
 
   .timeline-left {
@@ -3068,9 +3072,10 @@ video {
 	background: #eee;
 	padding: 6px 14px;
 	border-radius: 20px;
-	font-size: 0.75rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	margin-bottom: 10px;
+	color: #F57C00;
   }
 
   .timeline-title {
@@ -3251,7 +3256,7 @@ video {
 	background: #fff;
 	padding: 40px;
 	border-radius: 15px;
-	max-width: 65vw;
+	max-width: 45vw;
 	width: 90%;
 	position: relative;
 	animation: fadeIn 0.3s ease;
@@ -3274,7 +3279,7 @@ video {
   }
   
   .modal-left img {
-	width: 100%;
+	width: 90%;
 	height: auto;
 	border-radius: 10px;
   }
@@ -3350,7 +3355,7 @@ video {
   .tabs {
 	display: flex;
 	justify-content: flex-start;
-	gap: 12%;
+	gap: 5%;
 	border-bottom: 2px solid #1d1d1f;
 	padding: 20px 0 0;
 	padding-top: 3%;
