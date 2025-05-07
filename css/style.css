@@ -3156,13 +3156,16 @@ video {
   }
   
   .text-side h1 {
-	font-size: 48px;
+	font-size: 45px;
 	font-weight: 700;
 	color: #1a1a1a;
 	line-height: 1.2;
+	text-align: left;
   }
   
-  .highlight {
+  .team-highlight {
+	color: #F57C00;
+	
 	
   }
   
