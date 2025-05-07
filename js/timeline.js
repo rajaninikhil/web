@@ -1,13 +1,18 @@
 const progressLine = document.getElementById('timelineProgress');
-    const timeline = document.getElementById('timeline');
+const timeline = document.getElementById('timeline');
 
-    window.addEventListener('scroll', () => {
-      const timelineTop = timeline.offsetTop;
-      const timelineHeight = timeline.offsetHeight;
-      const scrollY = window.scrollY + window.innerHeight;
+window.addEventListener('scroll', () => {
+  const timelineTop = timeline.offsetTop;
+  const timelineBottom = timelineTop + timeline.offsetHeight;
+  const scrollMiddle = window.scrollY + window.innerHeight / 200;
 
-      const maxHeight = (scrollY/1.75) - timelineTop;
-      const clampedHeight = Math.min(timelineHeight, Math.max(0, maxHeight));
-
-      progressLine.style.height = `${clampedHeight}px`;
-    });
+  // Only update when scroll is within the timeline
+  if (scrollMiddle >= timelineTop && scrollMiddle <= timelineBottom) {
+    const progress = scrollMiddle - timelineTop;
+    progressLine.style.height = `${progress}px`;
+  } else if (scrollMiddle < timelineTop) {
+    progressLine.style.height = `0px`;
+  } else if (scrollMiddle > timelineBottom) {
+    progressLine.style.height = `${timeline.offsetHeight}px`;
+  }
+});

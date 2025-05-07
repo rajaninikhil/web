@@ -105,7 +105,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'AloeveraDisplay-Bold', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing:normal;
@@ -819,7 +819,7 @@ iframe{
 	color: #fff;
 	background-color: transparent;
 	border-color: #fff;
-	font-family: 'AloeveraDisplay-Bold', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight:700;
 	padding:16px 32px;
 	font-size:13px;
@@ -841,7 +841,7 @@ iframe{
 	color: #fff;
 	background-color: #F2B410;
 	border-color: #F2B410;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight:700;
 	padding:18px 32px;
 	font-size:13px;
@@ -1497,7 +1497,7 @@ ul.footer-list li a:hover{
 	font-size: 18px;
     line-height: 24px;
     vertical-align: bottom;
-    font-family: 'AloeveraDisplay-Bold', serif;
+	font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #FFF;
     float: left;
@@ -1602,7 +1602,7 @@ h2.menu-section-title::after{
 	font-size: 18px;
     line-height: 22px;
     vertical-align: bottom;
-    font-family: 'AloeveraDisplay-Bold', serif;
+	font-family: 'Inter', sans-serif;
     font-weight: 700;
     float: left;
     letter-spacing: 2px;
@@ -1681,7 +1681,7 @@ h3.blog-title{
 }
 
 h3.blog-title a{
-	font-family: 'AloeveraDisplay-Bold', sans-serif;
+	font-family: 'Inter', sans-serif;
     font-weight: 700;
 	font-size:21px;
 	color:#252525;
@@ -1945,7 +1945,7 @@ p.contact_success_box{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: AloeveraDisplay-Regular, sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .featured-products h5 {
@@ -2536,13 +2536,6 @@ p.contact_success_box{
 
 /* testimonials */
 
-  body {
-	font-family: 'AloeveraDisplay-Regular', sans-serif;
-	margin: 0;
-	padding: 0;
-	background: #f9f9f9;
-  }
-  
   .testimonial-area {
 	padding: 100px 20px;
 	background-color: #fff5e0;
@@ -2809,7 +2802,7 @@ h3 {
 /* Use-case section */
 .fragrance-section {
     text-align: center;
-    font-family: AloeveraDisplay-Regular, sans-serif;
+	font-family: 'Inter', sans-serif;
 	margin-bottom: -50px;
 	margin-top: -20px;
 }
@@ -2883,7 +2876,7 @@ h3 {
 /* Icons section */
 .incense-section {
     text-align: center;
-    font-family: AloeveraDisplay-Regular, sans-serif;
+	font-family: 'Inter', sans-serif;
     margin: 40px 0;
 }
 
@@ -2959,7 +2952,7 @@ h3 {
 /* Video Section */
 .video-section {
     text-align: center;
-    font-family: AloeveraDisplay-Regular, sans-serif;
+	font-family: 'Inter', sans-serif;
     margin: 40px 0;
 }
 
@@ -3001,7 +2994,7 @@ video {
 .timeline-container {
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 80px 20px;
+	padding: 40px 20px;
 	position: relative;
   }
 
@@ -3063,6 +3056,10 @@ video {
 	margin-left: -30px;
   }
 
+  .timeline-right p {
+	font-size: 1.7rem; /* Adjust as needed */
+  }
+
   .timeline-left {
 	text-align: right;
   }
@@ -3076,6 +3073,13 @@ video {
 	font-weight: bold;
 	margin-bottom: 10px;
 	color: #F57C00;
+	transition: 0.3s ease-in-out;
+	cursor: default;
+  }
+
+  .timeline-step:hover {
+	background: #F57C00;
+	color: #ffffff;
   }
 
   .timeline-title {
@@ -3098,7 +3102,13 @@ video {
 	border-radius: 50%;
 	border: 5px solid white;
 	z-index: 3;
+	transition: background 0.3s ease;
   }
+
+  .timeline-circle.active {
+	background: #F57C00;
+}
+
 
   @media (max-width: 768px) {
 	.timeline-item {
@@ -3122,7 +3132,7 @@ video {
 	.timeline-circle {
 	  left: 20px;
 	  transform: none;
-	}
+	}	
   }
   
 
@@ -3152,6 +3162,9 @@ video {
 	line-height: 1.2;
   }
   
+  .highlight {
+	
+  }
   
   .cards-side {
 	display: flex;
@@ -3422,12 +3435,12 @@ video {
 
 
   /* ecosystem */
-  .hero {
+  .ecosystem {
 	text-align: center;
-	padding: 40px 30px;
+	padding: 80px 30px;
   }
   
-  .hero h1 {
+  .ecosystem h1 {
 	font-size: 48px;
 	font-weight: 700;
 	line-height: 1.2;
@@ -3565,64 +3578,60 @@ video {
 
 
   /* about us landing */
-  .about-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 60px 80px;
-	max-width: 80vw;
-	margin: auto;
-	padding-top: 6%;
-  }
 
-  .about-text-content {
-	max-width: 36.5vw;
-  }
-
-
-  h1 {
-	font-size: 48px;
-	line-height: 1.2;
-	margin: 0 0 20px;
-	padding-bottom: 10px;
-  }
-
-  .about-highlight {
-	color: #F57C00;
-  }
-
-  .about-description {
-	font-size: 16px;
-	color: #4b5563;
-	line-height: 1.6;
-  }
-
-  .about-image-container {
-	flex-shrink: 0;
-	border-radius: 10px;
+  .about-landing {
+	background: linear-gradient(135deg, #00000050, #00000050), url('/images/about/about-bg.jpg') center/cover no-repeat;
+	color: white;
+	text-align: center;
+	margin-top: 4rem;
+	padding-top: 10rem;
+	position: relative; 
 	overflow: hidden;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-landing h1:hover {
+	color: #F57C00;
+	transition: 0.5s ease-in-out;
   }
 
-  .about-image-container img {
-	display: block;
-	width: 25vw;
-	height: auto;
+  .about-landing h1 {
+	font-size: 5rem;
+	font-weight: 800;
+	line-height: 1.2;
+	color: white;
+	position: relative;
+	z-index: 2;
   }
-
-  @media (max-width: 1024px) {
-	.container {
-	  flex-direction: column;
-	  padding: 40px;
-	  text-align: center;
-	}
-
-	.image-container {
-	  margin-top: 30px;
-	}
+  
+  .about-landing-text {
+	background: #fff;
+	border-radius: 2rem;
+	color: black;
+	padding: 2rem;
+	margin: 6rem auto;
+	max-width: 1000px;
+	box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+	position: relative;
+	z-index: 3;
   }
-
-
-
-
-
+  
+  .about-landing-text p {
+	padding: 2% 3%;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.4;
+	text-align: justify;
+	color: #555;
+	margin-bottom: 0;
+  }
+  
+  .bottom-rectangle {
+	width: 100%;
+	height: 250px;
+	background: white;
+	position: absolute;
+	bottom: -10%;
+	left: 0;
+	z-index: 1;
+  }
+  
