@@ -2,55 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kitoka Clone</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scroll Up to Stack Cards</title>
   <style>
-   
     body {
-      background: linear-gradient(135deg, #672eb0, #e27834);
-      color: white;
-      min-height: 100vh;
-      font-family: inter, sans-serif;
+      margin: 0;
+      font-family: sans-serif;
+      background: #f0f2f5;
+      height: 300vh;
     }
 
-    .about-landing {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 0 2rem;
+    .spacer {
+      height: 100vh;
     }
 
-    .about-landing h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.2;
+    .card-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      height: 500px;
     }
 
-    .about-landing-text {
-      background: #fff;
-      border-radius: 2rem;
-      color: black;
-      padding: 2rem;
-      margin: 4rem auto;
-      max-width: 1000px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    }
-
-    .about-landing-text h2 {
+    .card {
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.5rem;
-      font-weight: 700;
+      transition: transform 0.2s ease-out;
+    }
+
+    #card1 {
+      top: 0;
+      z-index: 1;
+    }
+
+    #card2 {
+      top: 220px;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-  <section class="about-landing">
-    <h1><br><br>Invest your money, grow your life<br><br></h1>
-  </section>
 
-  <section class="about-landing-text">
-    <h2>Hello, Marshall</h2>
-    <p>Today The Overall Efficiency Is <span style="color: purple; font-weight: bold;">150%</span>. Otherwise, There Is Nothing New!</p>
-  </section>
+  <div class="spacer"></div> <!-- Space for scrolling before cards -->
+
+  <div class="card-container" id="cardContainer">
+    <div class="card" id="card1">Card 1</div>
+    <div class="card" id="card2">Card 2</div>
+  </div>
+
+  <div class="spacer"></div> <!-- Space for scrolling after cards -->
+
+  <script>
+    const card2 = document.getElementById('card2');
+    const container = document.getElementById('cardContainer');
+
+    window.addEventListener('scroll', () => {
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Progress increases as container goes UP the screen
+      const progress = Math.min(Math.max(1 - rect.bottom / windowHeight, 0), 1);
+
+      // Move card2 from 220px (normal) to 0px (stacked)
+      const translateY = 220 * progress;
+
+      card2.style.transform = `translateY(-${translateY}px)`;
+    });
+  </script>
 
 </body>
 </html>

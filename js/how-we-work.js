@@ -1,45 +1,16 @@
 
-const tabLabels = [
-	"Analyze", "Define", "Plan", "Onboard", "Connect", "Manage", "Refine"
-  ];
-  const tabDescriptions = [
-	"Analyze Your Customer Footprint",
-	"Define Your Business Goals",
-	"Plan Your Strategy Effectively",
-	"Onboard With Ease",
-	"Connect With Your Audience",
-	"Manage Everything Seamlessly",
-	"Refine Your Process Continuously"
-  ];
+const howcard2 = document.getElementById('howcard2');
+const container = document.getElementById('howContainer');
 
-  const tabs = document.querySelectorAll(".tabs span");
-  const heading = document.getElementById("content-heading");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const image = document.getElementById("factoryImage");
+window.addEventListener('scroll', () => {
+  const rect = container.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
 
-  let currentIndex = 0;
+  // Progress increases as container goes UP the screen
+  const progress = Math.min(Math.max(1 - rect.bottom / windowHeight, 0), 1);
 
-  function setActiveTab(index) {
-	tabs.forEach(tab => tab.classList.remove("active"));
-	tabs[index].classList.add("active");
-	heading.textContent = tabDescriptions[index];
-	image.style.left = `-${index * 10}%`; // scrolls image slowly to the right
-	currentIndex = index;
-  }
+  // Move card2 from 220px (normal) to 0px (stacked)
+  const translateY = 220 * progress;
 
-  tabs.forEach((tab, index) => {
-	tab.addEventListener("click", () => setActiveTab(index));
-  });
-
-  prevBtn.addEventListener("click", () => {
-	const newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-	setActiveTab(newIndex);
-  });
-
-  nextBtn.addEventListener("click", () => {
-	const newIndex = (currentIndex + 1) % tabs.length;
-	setActiveTab(newIndex);
-  });
-
-  
+  howcard2.style.transform = `translateY(-${translateY}px)`;
+});
