@@ -1,7 +1,6 @@
 const howcard1 = document.getElementById("howcard1");
 const howcard2 = document.getElementById("howcard2");
 const container = document.getElementById("howContainer");
-const header = document.getElementById("howWeWork");
 
 window.addEventListener("scroll", () => {
 	const containerRect = container.getBoundingClientRect();
@@ -47,7 +46,5 @@ window.addEventListener("scroll", () => {
 		howcard1.style.position = "fixed";
 		howcard1.style.top = "25vh";
 		howcard2.style.transform = `translateY(-${distanceScrolled}px)`;
-		header.style.position = "fixed";
-		header.style.top = "25vh";
 	}
 });

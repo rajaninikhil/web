@@ -3350,7 +3350,7 @@ h1 {
 }
 
 .spacer2 {
-	height: 5vh;
+	height: 50vh;
 }
 
 .how-container {
@@ -3358,31 +3358,19 @@ h1 {
 	width: 100%;
 	max-width: 70vw;
 	margin: 0 auto;
-	margin-bottom: 45vh;
 	height: 85vh;
 }
 
-.howcard::before {
-	content: "";
-	position: absolute;
-	top: 2.5%;
-	left: 2.5%;
-	width: 95%;
-	height: 95%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	border-radius: 10px;
-	z-index: 0;
+.card1holder {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-#howcard1::before {
-	background-image: url("../images/about/howcard1.png");
+.card1holder h1{
+	text-align: center;
 }
 
-#howcard2::before {
-	background-image: url("../images/about/howcard2.png");
-}
 
 .howcard {
 	position: absolute;
@@ -3409,11 +3397,13 @@ h1 {
 #howcard1 {
 	top: 0;
 	z-index: 1;
+	background-image: url("../images/about/howcard1.png");
 }
 
 #howcard2 {
 	top: 75%;
 	z-index: 2;
+	background-image: url("../images/about/howcard2.png");
 }
 
 /* why us */
