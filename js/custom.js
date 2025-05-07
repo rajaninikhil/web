@@ -715,3 +715,11 @@ window.addEventListener('scroll', function () {
 		logo.classList.remove('show-logo');
 	}
 });
+
+
+
+
+
+
+
+  
