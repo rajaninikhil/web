@@ -3350,30 +3350,38 @@ h1 {
 }
 
 .spacer2 {
-	height: 50vh;
+	height: 45vh;
 }
 
 .how-container {
+    position: relative;
+    width: 100%;
+    max-width: 70vw;
+    margin: 0 auto;
+    height: 100vh;
+	padding-top: 10vh;
+}
+
+.card1-wrapper {
 	position: relative;
+	top: 3vh; /* Add vertical space below heading */
+  }
+
+.how-heading {
+	position: absolute;
 	width: 100%;
-	max-width: 70vw;
-	margin: 0 auto;
-	height: 85vh;
-}
-
-.card1holder {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.card1holder h1{
 	text-align: center;
+	font-size: 5rem;
+	font-weight: 700;
+	color: #000;
+	z-index: 2;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
-
 
 .howcard {
-	position: absolute;
+	position: absolute; /* Important for positioning inside container */
 	width: 70vw;
 	height: auto;
 	background: white;
@@ -3395,16 +3403,22 @@ h1 {
 }
 
 #howcard1 {
-	top: 0;
+	position: absolute;
+	top: 10vh;
 	z-index: 1;
 	background-image: url("../images/about/howcard1.png");
 }
 
 #howcard2 {
-	top: 75%;
-	z-index: 2;
+	top: 50%;
+	z-index: 5;
 	background-image: url("../images/about/howcard2.png");
 }
+
+
+
+
+
 
 /* why us */
 .why-section {
@@ -3420,6 +3434,7 @@ h1 {
 	letter-spacing: normal;
 	margin-bottom: 50px;
 }
+
 
 .why-container {
 	display: flex;
@@ -3446,7 +3461,7 @@ h1 {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	background-color: #f57c00; /* Icon background */
+	background-color: #ffb000; /* Icon background */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -3457,7 +3472,7 @@ h1 {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	background-color: #ffedda; /* icon background */
+	background-color: #ffb000; /* icon background */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -3480,6 +3495,9 @@ h1 {
 	line-height: 20px;
 	margin: 0;
 }
+
+
+
 
 /* ecosystem */
 .ecosystem {
@@ -3541,6 +3559,10 @@ h1 {
 	max-width: 280px;
 	align-self: flex-start;
 }
+
+
+
+
 
 /* r&d */
 .rd-card-container {
