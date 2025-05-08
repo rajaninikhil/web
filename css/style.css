@@ -276,7 +276,7 @@ iframe {
 }
 
 .section-yellow {
-	background-color: #fff5e0;
+	background-color: #ffffff;
 	padding: 50px 0;
 }
 
@@ -1020,7 +1020,7 @@ btn:hover {
 	transition: background-color 1s ease 0s;
 }
 .navbar-fixed-top.opaque {
-	background-color: rgba(219, 219, 219, 0.95) !important;
+	background-color: #363636 !important;
 	transition: background-color 1s ease 0s;
 }
 
@@ -2020,7 +2020,7 @@ p.contact_success_box {
 .featured-products {
 	text-align: center;
 	padding: 50px 10%;
-	background-color: #fff5e0;
+	background-color: #ffffff;
 }
 
 .featured-products h2 {
@@ -2578,7 +2578,7 @@ p.contact_success_box {
 
 .testimonial-area {
 	padding: 100px 20px;
-	background-color: #fff5e0;
+	background-color: #ffffff;
 }
 
 .testimonial-inner {
