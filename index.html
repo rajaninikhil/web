@@ -580,6 +580,7 @@
     <!--end video section-->
 
     <!--begin brands section-->
+    <!-- Your Brands Section -->
     <section class="section-yellow" id="brands">
         <div class="container">
             <div class="section-header">
@@ -587,7 +588,8 @@
                 <h2>OUR FAMILY OF BRANDS</h2>
             </div>
             <div class="work-gallery">
-                <div class="work-item">
+                <!-- Brand Item -->
+                <div class="work-item" data-modal="modal-bharatvasi">
                     <img src="images/brands/1 - bharat vasi.jpg" alt="Bharat Vasi">
                     <div class="hover-overlay">
                         <div class="overlay-content">
@@ -596,7 +598,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="work-item">
+
+                <div class="work-item" data-modal="modal-gurudev">
                     <img src="images/brands/2 - gurudev.jpg" alt="Gurudev">
                     <div class="hover-overlay">
                         <div class="overlay-content">
@@ -605,7 +608,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="work-item">
+
+                <div class="work-item" data-modal="modal-shantiniketan">
                     <img src="images/brands/3 - shantiniketan.jpg" alt="Shantiniketan">
                     <div class="hover-overlay">
                         <div class="overlay-content">
@@ -614,16 +618,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="work-item">
-                  <img src="images/brands/4 - yatra.jpg" alt="Yatra">
-                  <div class="hover-overlay">
-                      <div class="overlay-content">
-                          <span class="category">Parimal</span>
-                          <h3>Yatra</h3>
-                      </div>
-                  </div>
-              </div>
-              <div class="work-item">
+
+                <div class="work-item" data-modal="modal-yatra">
+                    <img src="images/brands/4 - yatra.jpg" alt="Yatra">
+                    <div class="hover-overlay">
+                        <div class="overlay-content">
+                            <span class="category">Parimal</span>
+                            <h3>Yatra</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-item" data-modal="modal-pure">
                     <img src="images/brands/5 - pure.jpg" alt="Pure Series">
                     <div class="hover-overlay">
                         <div class="overlay-content">
@@ -632,10 +638,51 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
+
+    <!-- Modals -->
+    <div id="modal-bharatvasi" class="brand-modal">
+      <div class="brand-modal-content">
+        <span class="close">&times;</span>
+        <h2>Bharat Vasi</h2>
+        <p>Launched in 1994 in Kolkata, Parimal Bharat Vasi Aromatic Incense Sticks quickly captured the hearts of millions across India. The sparkling fragrance possesses a delicate yet rich blend of Indian flowers and well-balanced notes, making it truly The Fragrance of India. Bharat Vasi remains one of India's most sold and cherished incense varieties, known for its purity and effectiveness in enhancing daily puja, meditation, and spiritual practices. Crafted using natural floral ingredients and traditional techniques, this agarbatti brings divine calm into your sacred space. Ideal for daily use, it connects your prayers with the fragrance of a nation’s devotion.</p>
+      </div>
+    </div>
+
+    <div id="modal-gurudev" class="brand-modal">
+      <div class="brand-modal-content">
+        <span class="close">&times;</span>
+        <h2>Gurudev</h2>
+        <p>Launched in 1988, Parimal Gurudev Aromatic Incense Sticks are a tribute to the timeless role of the Guru—a guide who leads from darkness to light. Inspired by this wisdom, the incense features a unique leathery fragrance balanced with floral and earthy notes, designed to deepen your connection during prayer, meditation, or quiet reflection. Made from natural ingredients and rooted in purity, Gurudev agarbatti offers a dignified scent that calms the mind and honours tradition. Ideal for daily rituals, this incense embodies the sacred guidance of a spiritual teacher, bringing clarity, balance, and serenity into your space. </p>
+      </div>
+    </div>
+
+    <div id="modal-shantiniketan" class="brand-modal">
+      <div class="brand-modal-content">
+        <span class="close">&times;</span>
+        <h2>Shantiniketan</h2>
+        <p>Parimal Shantinikethan Aromatic Incense Sticks are carefully crafted using a blend of natural floral extracts like jasmine, rose, and marigold, commonly found in traditional Bengali households. These agarbattis are perfect for daily prayers, evening aartis, and peaceful meditation. The soft floral fragrance brings a touch of nature into your sacred space, promoting inner calm and spiritual balance. Whether you are performing morning rituals or winding down after a long day, Shantinikethan's soothing aroma helps deepen your spiritual connection. Made with ethically sourced botanicals and packed in recyclable materials, this incense is a conscious choice for your home and soul.</p>
+      </div>
+    </div>
+
+    <div id="modal-yatra" class="brand-modal">
+      <div class="brand-modal-content">
+        <span class="close">&times;</span>
+        <h2>Yatra</h2>
+        <p>In a country that is the abode of many Gods, when we embark on a journey to their doorsteps, our hearts are filled with faith and devotion. Parimal Yatra Natural Incense Sticks are a tribute to that sacred journey, crafted with natural resins, herbs, and temple-inspired ingredients. Its divine aroma mirrors the fragrances experienced during holy pilgrimages, enhancing your prayers and spiritual rituals. Whether used at home or during a Yatra, it brings peace, grounding, and a deeper sense of connection. With no chemicals or synthetic additives, Yatra agarbatti is your daily companion in the pursuit of blessings and inner light.</p>
+      </div>
+    </div>
+
+    <div id="modal-pure" class="brand-modal">
+      <div class="brand-modal-content">
+        <span class="close">&times;</span>
+        <h2>Pure Series</h2>
+        <p>Launched in 2001 in Ahmedabad, Parimal Moments Aromatic Incense Sticks evoke an experience of elegance and inner calm. A dazzling essence of rare sandalwood opens into an eternal fragrance, perfectly blended with natural amber, floral notes, and a touch of oriental musk. This timeless aroma is ideal for daily puja, meditation, or simply creating moments of peace at home. Crafted from natural ingredients and free from synthetic additives, Moments agarbatti brings warmth and purity to your sacred rituals. Its rich yet soothing scent lingers gently, reminding you that every spiritual moment is a step toward inner balance..</p>
+      </div>
+    </div>
+
     <!--end brands section-->
 
     
@@ -873,6 +920,7 @@
     <script src="js/wow.js"></script>
     <script src="js/instafeed.js"></script>
     <script src="js/instagram.js"></script>
+    <script src="js/brands.js"></script>
      
     <!-- RS5.0 Core JS Files -->
     <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
