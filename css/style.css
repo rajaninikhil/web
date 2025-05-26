@@ -3469,7 +3469,7 @@ h1 {
 
 .howcard {
 	position: absolute; /* Important for positioning inside container */
-	width: 70vw;
+	width: 100%;
 	height: auto;
 	background: white;
 	border-radius: 12px;
@@ -3494,12 +3494,7 @@ h1 {
 	top: 10vh;
 	z-index: 1;
 	background-image: url("../images/about/howcard1.png");
-}
-
-#howcard2 {
-	top: 50%;
-	z-index: 5;
-	background-image: url("../images/about/howcard2.png");
+	background-size: cover;
 }
 
 
@@ -3711,17 +3706,16 @@ h1 {
 }
 
 .rd-card-text h2 {
-	font-size: 35px;
+	font-size: 3.2rem;
 	margin-bottom: 10%;
 	margin-top: 10%;
 	color: white;
 }
 
 .rd-card-text p {
-	font-size: 17px;
+	font-size: 1.5rem;
 	line-height: 1.5;
 	color: white;
-	padding-left: 15%;
 }
 
 /* about us landing */
