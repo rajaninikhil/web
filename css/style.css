@@ -2968,7 +2968,7 @@ h3 {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 70px;
+	gap: 10vw;
 	margin-top: 20px;
 }
 
@@ -3662,23 +3662,24 @@ h1 {
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 	display: flex;
 	align-items: flex-start;
-	text-align: right;
+	text-align: left;
 	padding: 20px;
-	padding-left: 30%;
-	padding-right: 3%;
+	padding-left: 3%;
+	padding-right: 30%;
 	position: relative;
 	overflow: hidden;
+	flex-wrap: wrap;
 }
 
 .rd-card-bg {
 	position: absolute;
 	inset: 0;
-	background-image: url("../images/metrics.jpg");
+	background-image: url("../images/about/rd.png");
 	background-size: cover;
 	background-position: center;
 	transition: transform 0.7s ease;
 	z-index: 0;
-	left: -160px;
+	left: 0px;
 	top: -25px;
 }
 
@@ -3691,32 +3692,54 @@ h1 {
 	position: absolute;
 	inset: 0;
 	background: linear-gradient(
-		to left,
+		to right,
 		#f57c00 0%,
-		/* Deep orange at start */ rgba(255, 142, 0, 0.2) 50%,
+		/* Deep orange at start */ rgba(255, 142, 0, 0.6) 70%,
 		/* Mid orange */ rgba(255, 183, 0, 0) 100% /* Light orange fade */
 	);
 	z-index: 1;
 }
 
 .rd-card-text {
-	position: relative;
+	position: static;
 	color: #fff;
 	z-index: 2;
+	box-sizing: border-box;
 }
 
 .rd-card-text h2 {
-	font-size: 3.2rem;
+	font-size: clamp(1.8rem, 4vw, 3.2rem);
 	margin-bottom: 10%;
 	margin-top: 10%;
 	color: white;
 }
 
 .rd-card-text p {
-	font-size: 1.5rem;
+	font-size: clamp(1rem, 1.1vw, 1.8rem);
 	line-height: 1.5;
 	color: white;
 }
+
+@media (max-width: 768px) {
+  .rd-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .rd-card-text {
+    width: 90%;
+  }
+
+  .rd-card-text p {
+	font-size: clamp(1rem, 2.8vw, 2rem);
+  }
+}
+
+
+
+
+
+
 
 /* about us landing */
 
