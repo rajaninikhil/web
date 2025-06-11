@@ -543,40 +543,40 @@ observer.observe(counterSection);
 
   const testimonialData = [
 	{
-	  text: "Parimal Mandir's incense fills my home with an authentic, soothing fragrance that brings peace and positivity. Truly the best!",
-	  name: "RAJESH SHARMA"
+	  text: "I used to struggle to find incense that lasted and helped me stay focused during prayer. Parimal’s agarbattis have changed that—they are consistent, calming, and perfect for my daily rituals.",
+	  name: "Raghuram D.R"
 	},
 	{
-	  text: "I've been using their incense for years, and nothing matches the purity and calming aroma. It has become a part of my daily prayers.",
-	  name: "ANITA IYER"
+	  text: " I was hesitant about strong synthetic smells that usually trigger my allergies. But with Parimal, it's just pure fragrance—pleasant and natural. Now my home smells fresh without the worry",
+	  name: "Rekha Sudhakar"
 	},
 	{
-	  text: "The quality and natural ingredients make a huge difference. Every stick burns evenly and lasts long, creating a serene atmosphere.",
-	  name: "VIKRAM MEHTA"
+	  text: "Finding a truly peaceful atmosphere for worship was difficult in a noisy environment. Lighting Parimal incense has created a serene space even in the busiest parts of my day.",
+	  name: "Sukanya Aradhya"
 	},
 	{
-	  text: "Their fragrances are divine! The sandalwood and lavender blends are my absolute favorites for meditation and relaxation.",
-	  name: "POOJA DESAI"
+	  text: "The Pure Series by Parimal stands out for its quality. The fragrance lingers gently and feels luxurious every time I use it. It’s more than just incense—it's an experience",
+	  name: "Sreesha Bhat"
 	},
 	{
-	  text: "Parimal Mandir incense reminds me of my childhood home. The purity and craftsmanship are unmatched – truly a brand that carries tradition forward.",
-	  name: "MANOJ VERMA"
+	  text: "From the very first use, I noticed how quickly the fragrance spread through my entire home. The Essence of Bakhoor and Pure Khus come in elegant packaging and offer a truly premium feel. Khushboo hi Khushboo!",
+	  name: "Mantu Agarwal"
 	},
 	{
-	  text: "Parimal Mandir's incense has a magical essence that fills my home with warmth and tranquility. It's perfect for unwinding after a long day",
-	  name: "PRIYA NAIR"
+	  text: "I always seek products that elevate my spiritual journey. Parimal’s incense brings a comforting energy to my Yatra and makes every moment more special",
+	  name: "Mythri"
 	},
 	{
-	  text: "The rich and authentic fragrances make every prayer session special. You can truly feel the purity in every stick.",
-	  name: "AMIT KHANNA"
+	  text: "Parimal’s Pure Oud Amber is a game-changer. The quality is unmatched, and the richness of the scent adds elegance to every room. I’ve already recommended it to many.",
+	  name: "Ujwal Nayak"
 	},
 	{
-		text: "I love how each incense stick has a long-lasting, soothing aroma. The jasmine and rose variants are my absolute favorites!",
-		name: "NEHA GUPTA"
+		text: "Pure Khus has completely transformed my space. Not only does it smell divine, but the diffusion is excellent and long-lasting. Even guests have complimented the fragrance",
+		name: "Janaki Sreesha"
 	  },
 	{
-		text: "These incense sticks bring a sense of calm and spirituality to my space. The craftsmanship and natural ingredients are truly remarkable.",
-		name: "SURESH PATEL"
+		text: "Every time I light a stick, it instantly brings back memories of home. The scent is so authentic—it’s like being transported to India again",
+		name: "Leandro Migani"
 	  }
   ];
   
