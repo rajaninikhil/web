@@ -2863,7 +2863,7 @@ p.contact_success_box {
 	font-size: 14px;
 }
 
-h3 {
+.content h3 {
 	font-size: 18px;
 	margin: 10px 0;
 }
@@ -2968,7 +2968,7 @@ h3 {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 10vw;
+	gap: 4vw;
 	margin-top: 20px;
 }
 

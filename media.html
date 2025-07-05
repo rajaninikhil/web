@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Showcase</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .media-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 0;
+      gap: 5vh;
+    }
+
+    .media-card {
+      display: flex;
+      width: 70vw;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: transform 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .media-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .media-card img {
+      width: 20%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .media-card .content {
+      padding: 20px;
+      width: 80%;
+    }
+
+    .media-card .content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .media-card .content p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .media-card {
+        flex-direction: column;
+        width: 90vw;
+      }
+
+      .media-card img {
+        width: 100%;
+      }
+
+      .media-card .content {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Media Showcase</h1>
+
+  <div class="media-section">
+    <a class="media-card" href="https://example.com/news1" target="_blank">
+      <img src="images/1.jpeg" alt="News 1">
+      <div class="content">
+        <h2>NEWS 1</h2>
+        <p>Parimal Agarbatti celebrates India’s Unity in Diversity with the Bharat Vasi campaign</p>
+      </div>
+    </a>
+
+    <a class="media-card" href="https://example.com/news2" target="_blank">
+      <img src="images/2.jpg" alt="News 2">
+      <div class="content">
+        <h2>NEWS 2</h2>
+        <p>New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio.</p>
+      </div>
+    </a>
+
+    <a class="media-card" href="https://example.com/news3" target="_blank">
+      <img src="images/3.jpeg" alt="News 3">
+      <div class="content">
+        <h2>NEWS 3</h2>
+        <p>Parimal wins National Excellence Award for eco-sustainable incense production.</p>
+      </div>
+    </a>
+
+    <a class="media-card" href="https://example.com/news4" target="_blank">
+      <img src="images/4.jpg" alt="News 4">
+      <div class="content">
+        <h2>NEWS 4</h2>
+        <p>Brand ambassador campaign featuring cultural icons goes live across India.</p>
+      </div>
+    </a>
+  </div>
+
+</body>
+</html>
