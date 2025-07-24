@@ -14,11 +14,20 @@
       text-align: center;
     }
 
-    h1 {
+    h3 {
       margin-top: 60px;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      color: #333;
+      color: #f57c00;
+    }
+
+
+    .hero-image {
+      width: 100%;
+      height: 60vh;
+      background-image: url('/images/1.jpeg'); /* Change the image */
+      background-size: cover;
+      background-position: center;
     }
 
     .media-section {
@@ -32,6 +41,7 @@
     .media-card {
       display: flex;
       width: 70vw;
+      height: 30vh;
       background: #fff;
       border-radius: 10px;
       overflow: hidden;
@@ -48,7 +58,7 @@
     }
 
     .media-card img {
-      width: 20%;
+      width: 33%;
       height: auto;
       object-fit: cover;
     }
@@ -56,16 +66,18 @@
     .media-card .content {
       padding: 20px;
       width: 80%;
+      padding-left: 3%;
     }
 
     .media-card .content h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-bottom: 10px;
+      margin-top: 10px;
     }
 
     .media-card .content p {
       color: #555;
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.5;
     }
 
@@ -87,38 +99,40 @@
 </head>
 <body>
 
-  <h1>Media Showcase</h1>
+  <div class="hero-image"></div>
+
+  <h3>Media Showcase</h3>
 
   <div class="media-section">
-    <a class="media-card" href="https://example.com/news1" target="_blank">
-      <img src="images/1.jpeg" alt="News 1">
+    <a class="media-card" href="https://www.medianews4u.com/different-festivals-one-fragrance-parimal-agarbatti-strengthens-cultural-bonds-with-bharat-vasi-campaign/" target="_blank">
+      <img src="images/media/media-1.png" alt="News 1">
       <div class="content">
-        <h2>NEWS 1</h2>
-        <p>Parimal Agarbatti celebrates India’s Unity in Diversity with the Bharat Vasi campaign</p>
+        <h2>Parimal Agarbatti Unites India Through Fragrance This Festive Season</h2><br>
+        <p>Parimal Agarbatti’s “Bharat Vasi” campaign celebrates India’s cultural diversity, highlighting shared traditions and emotions through a common fragrance that connects people across festivals and communities.</p>
       </div>
     </a>
 
-    <a class="media-card" href="https://example.com/news2" target="_blank">
-      <img src="images/2.jpg" alt="News 2">
+    <a class="media-card" href="https://madrasmixture.com/paraimaala-akarapatataiyaina-paarata-vaacai-pairacacaarama" target="_blank">
+      <img src="images/media/media-2.jpeg" alt="News 2">
       <div class="content">
-        <h2>NEWS 2</h2>
-        <p>New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio. New global partnership expands Parimal’s international reach and fragrance portfolio.</p>
+        <h2>Parimal's Fragrance Captures Bharat’s Soul in Tamil Campaign</h2><br>
+        <p>The Tamil adaptation of Parimal’s campaign emphasizes India’s unity in diversity, blending fragrance with emotion to connect deeply with Tamil audiences through shared festive heritage and values.</p>
       </div>
     </a>
 
-    <a class="media-card" href="https://example.com/news3" target="_blank">
-      <img src="images/3.jpeg" alt="News 3">
+    <a class="media-card" href="https://www.afaqs.com/companies/brands-unite-in-republic-medias-nazar-ka-teeka-campaign-an-appeal-to-vote-before-the-elections" target="_blank">
+      <img src="images/media/media-3.jpg" alt="News 3">
       <div class="content">
-        <h2>NEWS 3</h2>
-        <p>Parimal wins National Excellence Award for eco-sustainable incense production.</p>
+        <h2>Republic Media Appeals to Voters With ‘Nazar Ka Teeka’</h2><br>
+        <p>Republic Media's "Nazar Ka Teeka" campaign brings together top brands to encourage voter turnout, blending pop culture with civic duty in a creative pre-election initiative.</p>
       </div>
     </a>
 
-    <a class="media-card" href="https://example.com/news4" target="_blank">
-      <img src="images/4.jpg" alt="News 4">
+    <a class="media-card" href="https://archive.adgully.com/republic-media-network-unveils-nazar-ka-tikka-vote-jaroor-kare-143201.html" target="_blank">
+      <img src="images/media/media-4.jpg" alt="News 4">
       <div class="content">
-        <h2>NEWS 4</h2>
-        <p>Brand ambassador campaign featuring cultural icons goes live across India.</p>
+        <h2>‘Vote Jaroor Kare’: Republic Media’s Call to Action Campaign</h2><br>
+        <p>The campaign urges Indian citizens to vote, using the symbolic 'Nazar Ka Teeka' to creatively ward off voter apathy and inspire democratic participation with brand support.</p>
       </div>
     </a>
   </div>

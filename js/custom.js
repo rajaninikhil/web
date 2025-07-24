@@ -556,7 +556,7 @@ observer.observe(counterSection);
 	},
 	{
 	  text: "The Pure Series by Parimal stands out for its quality. The fragrance lingers gently and feels luxurious every time I use it. It’s more than just incense—it's an experience",
-	  name: "Sreesha Bhat"
+	  name: "Dushyanth Sridhar"
 	},
 	{
 	  text: "From the very first use, I noticed how quickly the fragrance spread through my entire home. The Essence of Bakhoor and Pure Khus come in elegant packaging and offer a truly premium feel. Khushboo hi Khushboo!",
@@ -564,7 +564,7 @@ observer.observe(counterSection);
 	},
 	{
 	  text: "I always seek products that elevate my spiritual journey. Parimal’s incense brings a comforting energy to my Yatra and makes every moment more special",
-	  name: "Mythri"
+	  name: "Kunal Ganjawala"
 	},
 	{
 	  text: "Parimal’s Pure Oud Amber is a game-changer. The quality is unmatched, and the richness of the scent adds elegance to every room. I’ve already recommended it to many.",
