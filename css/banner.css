@@ -1,0 +1,56 @@
+/* top banner above header */
+
+.top-banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #f57c00;
+            color: white;
+            text-align: center;
+            padding: 10px 0 0 0;
+            font-weight: 600;
+            font-size: 16px;
+            z-index: 1050;
+        }
+
+        .top-banner p {
+            font-family: Inter;
+            font-size: 1.5rem;
+            line-height: 24px;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .navbar-fixed-top {
+            top: 4.5%;
+        }
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: scroll-marquee 20s linear infinite;
+        }
+
+        .marquee-content span {
+            white-space: nowrap;
+            padding-right: 50px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Animation that shifts the entire content leftwards */
+        @keyframes scroll-marquee {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }

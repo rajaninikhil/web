@@ -13,7 +13,11 @@
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Loading Template CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+    <link href="css/banner.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style-magnific-popup.css" rel="stylesheet">
     
@@ -30,11 +34,17 @@
     <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">	
     
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 
     <!-- Font Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -435,7 +445,7 @@
 
       <!--ecosystem-->
       <section class="ecosystem">
-        <h1 style="margin-bottom: 0px;">Parimal <span class="highlight">Ecosystem</span><span class="dot">.</span></h1>
+        <h1>Parimal <span class="highlight">Ecosystem</span><span class="dot">.</span></h1>
       </section>
     
       <section class="eco-main">
@@ -475,61 +485,78 @@
 
 
  <!--begin footer -->
-    <div class="footer">
-            
-        <!--begin container -->
-        <footer class="footer">
-            <div class="footer-column">
-              <h4>COMPANY</h4>
-              <div class="address">
-              <p style="font-weight: bold;">PARIMAL HOUSE</p>
-              <p><br>Plot No 20 - 22, 8th Main Road
-              <br><br>J.C.Industrial Area, Off Kanakapura
-              <br><br><br><br>Road, Kumaraswamy Layout
-              <br><br>Bengaluru - 560 062
-              </div>
-              <p><a href="tel:+91 98864 78926">T: +91 98864 78926</a></p>
-              <p>E: info@parimalmandir.in</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Desktop Layout -->
+            <div class="desktop-layout">
+                <div class="footer-left">
+                    <div class="brand-title">PARIMAL MANDIR</div>
+                    <div class="company-name">PARIMAL HOUSE</div>
+                    <div class="address-block">
+                        <div class="address-line">Plot No 20 - 22, 8th Main Road</div>
+                        <div class="address-line">J.C.Industrial Area, Off Kanakapura</div>
+                        <div class="address-line">Road, Kumaraswamy Layout</div>
+                        <div class="address-line">Bengaluru - 560 062</div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-line"><span class="contact-label">T:</span> <a href="tel:+919886478926" class="contact-link">+91 98864 78926</a></div>
+                        <div class="contact-line"><span class="contact-label">E:</span> <a href="mailto:info@parimalmandir.in" class="contact-link">info@parimalmandir.in</a></div>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="newsletter-section">
+                        <h2 class="newsletter-title">Sign Up For<br>Our Newsletter</h2>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email" required>
+                            <button type="submit" class="newsletter-button">SUBSCRIBE →</button>
+                        </form>
+                        <div class="social-links">
+                            <a href="#" class="social-link social-facebook" aria-label="Facebook"></a>
+                            <a href="#" class="social-link social-twitter" aria-label="Twitter"></a>
+                            <a href="#" class="social-link social-instagram" aria-label="Instagram"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          
-            <div class="footer-column">
-              <h4>INFORMATION</h4>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Returns Policy</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-              </ul>
-            </div>
-          
-            <div class="footer-column">
-              <h4>QUICK LINKS</h4>
-              <ul>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">My Cart</a></li>
-                <li><a href="#">Wishlist</a></li>
-              </ul>
-            </div>
-          
-            <div class="footer-column newsletter">
-              <form action="#">
-                <input type="email" placeholder="Your email" />
-                <button type="submit">SUBSCRIBE</button>
-              </form>
-              <div class="social-icons">
-                <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
-                <a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
-                <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
-              </div>
-            </div>
-          </footer>
-          
-    
-    
-        <!--end container -->
+
+            <!-- Mobile Layout -->
+            <div class="mobile-layout">
+                <div class="mobile-header" onclick="toggleMobileContent()">
+                    <div class="brand-title">PARIMAL MANDIR</div>
+                    <button class="expand-button" id="expandBtn"></button>
+                </div>
                 
-    </div>
+                <div class="mobile-content" id="mobileContent">
+                    <div class="mobile-content-inner">
+                        <div class="company-name">PARIMAL HOUSE</div>
+                        <div class="address-block">
+                            <div class="address-line">Plot No 20 - 22, 8th Main Road</div>
+                            <div class="address-line">J.C.Industrial Area, Off Kanakapura</div>
+                            <div class="address-line">Road, Kumaraswamy Layout</div>
+                            <div class="address-line">Bengaluru - 560 062</div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-line"><span class="contact-label">T:</span> <a href="tel:+919886478926" class="contact-link">+91 98864 78926</a></div>
+                            <div class="contact-line"><span class="contact-label">E:</span> <a href="mailto:info@parimalmandir.in" class="contact-link">info@parimalmandir.in</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="newsletter-section">
+                    <h2 class="newsletter-title">Sign Up For<br>Our Newsletter</h2>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-button">SUBSCRIBE →</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#" class="social-link social-facebook" aria-label="Facebook"></a>
+                        <a href="#" class="social-link social-twitter" aria-label="Twitter"></a>
+                        <a href="#" class="social-link social-instagram" aria-label="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!--end footer -->
     
 
@@ -552,10 +579,27 @@
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
     
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     
     <!-- begin custom script-->
     <script src="js/custom.js"></script>
     <script src="js/plugins.js"></script>
+      <script>
+    const links = document.querySelectorAll('.nav');
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        link.classList.remove('leaving');
+        void link.offsetWidth;
+        link.classList.add('hovering');
+      });
+
+      link.addEventListener('mouseleave', () => {
+        link.classList.remove('hovering');
+        void link.offsetWidth;
+        link.classList.add('leaving');
+      });
+    });
+  </script>
     
 </body></html>
