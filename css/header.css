@@ -72,11 +72,11 @@
 			transition: transform 0.4s ease;
 		}
 
-        .nav-link.hovering {
+        .nav-link :hover {
             color: #f57c00;
         }
 
-		.nav-link.hovering::after {
+		.nav-link:hover::after {
 			transform: scaleX(1);
 			transform-origin: left;
 		}

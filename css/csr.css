@@ -8,7 +8,7 @@
     .hero-image {
       width: 100%;
       height: 60vh;
-      background-image: url('/images/csr/csr.jpg');
+      background-image: url('/images/csr/csr.png');
       background-size: cover;
       background-position: center;
     }
