@@ -1179,9 +1179,8 @@ iframe {
 }
 
 /* testimonials */
-
 .testimonial-area {
-	padding: 100px 20px;
+	padding: 60px 20px;
 	background-color: #ffffff;
 }
 
@@ -1191,28 +1190,28 @@ iframe {
 	margin: 0 auto;
 	justify-content: space-between;
 	align-items: center;
-	gap: 60px;
+	gap: 40px;
 	flex-wrap: wrap;
 }
 
 .testimonial-content {
 	flex: 1;
-	min-width: 300px;
+	min-width: 280px;
 	position: relative;
 }
 
 .quote-icon {
-	font-size: 180px;
+	font-size: 120px;
 	color: rgba(0, 0, 0, 0.05);
 	position: absolute;
-	left: -40px;
-	top: -70px;
+	left: -20px;
+	top: -40px;
 	line-height: 1;
 	z-index: 0;
 }
 
 .testimonial-content p {
-	font-size: 28px;
+	font-size: 24px;
 	color: #1f1f25;
 	font-weight: 400;
 	line-height: 1.6;
@@ -1235,18 +1234,18 @@ iframe {
 
 .testimonial-images {
 	flex: 1;
-	min-width: 300px;
+	min-width: 280px;
 }
 
 .testimonial-images .grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 25px;
+	gap: 15px;
 }
 
 .testimonial-images img {
-	width: 140px;
-	height: 140px;
+	width: 100%;
+	aspect-ratio: 1;
 	object-fit: cover;
 	border-radius: 10px;
 	opacity: 0.4;
@@ -1258,9 +1257,76 @@ iframe {
 .testimonial-images img.active {
 	opacity: 1;
 	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-	transform: translateY(-10px);
+	transform: translateY(-5px);
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+	.testimonial-area {
+		padding: 40px 15px;
+	}
+	
+	.testimonial-inner {
+		flex-direction: column;
+		gap: 30px;
+		text-align: center;
+	}
+	
+	.testimonial-content {
+		min-width: unset;
+		width: 100%;
+	}
+	
+	.quote-icon {
+		font-size: 80px;
+		left: -10px;
+		top: -20px;
+	}
+	
+	.testimonial-content p {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.testimonial-images {
+		min-width: unset;
+		width: 100%;
+		max-width: 300px;
+	}
+	
+	.testimonial-images .grid {
+		gap: 10px;
+	}
+	
+	.testimonial-images img {
+		aspect-ratio: 1;
+	}
+	
+	.testimonial-images img.active {
+		transform: translateY(-3px);
+	}
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+	.testimonial-area {
+		padding: 30px 10px;
+	}
+	
+	.testimonial-content p {
+		font-size: 18px;
+	}
+	
+	.quote-icon {
+		font-size: 60px;
+		left: -5px;
+		top: -15px;
+	}
+	
+	.testimonial-images img {
+		aspect-ratio: 1;
+	}
+}
 
 
 

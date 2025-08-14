@@ -1,340 +1,168 @@
-  .footer {
-            background-color: #efd6c9;
-            padding: 80px 0 60px;
-            position: relative;
-        }
+.footer {
+    background: #efd6c9;
+    padding: 48px 20px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    gap: 40px;
+}
 
-        /* Desktop Layout */
-        .desktop-layout {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
+.left-content {
+    flex: 1;
+    min-width: 0;
+}
 
-        .footer-left {
-            flex: 1;
-            max-width: 400px;
-			font-family: Montserrat, sans-serif;
-        }
+.title {
+    color: #e35353;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
 
-        .footer-right {
-            flex: 1;
-            max-width: 500px;
-            text-align: left;
-        }
+.company-name {
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
 
-        /* Mobile Layout */
-        .mobile-layout {
-            display: none;
-        }
+.address {
+    color: #555555;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
 
-        .mobile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            cursor: pointer;
-        }
+.address div {
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        .expand-button {
-            width: 30px;
-            height: 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
+.contact {
+    color: #555555;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
 
-        .expand-button::before,
-        .expand-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            background-color: #f57c00;
-            transition: transform 0.3s ease;
-        }
+.contact div {
+    margin-bottom: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        .expand-button::before {
-            width: 20px;
-            height: 2px;
-            transform: translate(-50%, -50%);
-        }
+.right-content {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
 
-        .expand-button::after {
-            width: 2px;
-            height: 20px;
-            transform: translate(-50%, -50%);
-        }
+.logo {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+}
 
-        .expand-button.expanded::after {
-            transform: translate(-50%, -50%) rotate(90deg);
-            opacity: 0;
-        }
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
 
-        .mobile-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background: #333333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
-        .mobile-content.expanded {
-            max-height: 800px;
-        }
+.social-icon:hover {
+    background: #555555;
+}
 
-        .mobile-content-inner {
-            padding-bottom: 20px;
-        }
+/* Tablet Styles */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .left-content {
+        width: 100%;
+    }
+    
+    .right-content {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .logo {
+        width: 180px;
+        height: 90px;
+    }
+}
 
-        .brand-title {
-            color: #f57c00;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .company-name {
-            color: #2d2d2d;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 35px;
-            letter-spacing: 0.5px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .address-block {
-            color: #4a4a4a;
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .address-line {
-            margin-bottom: 4px;
-			font-family: 'Montserrat', sans-serif;
-        }
-
-        .contact-info {
-            color: #4a4a4a;
-            font-size: 15px;
-            line-height: 1.7;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .contact-label {
-            font-weight: 500;
-            color: #4a4a4a;
-			font-family: 'Montserrat', sans-serif;
-        }
-
-        .contact-link {
-            color: #4a4a4a;
-            text-decoration: none;
-            transition: color 0.2s ease;
-			font-family: 'Montserrat', sans-serif;
-        }
-
-        .contact-link:hover {
-            color: #f57c00;
-        }
-
-        .newsletter-section {
-            text-align: left;
-        }
-
-        .newsletter-title {
-            color: #2d2d2d;
-            font-size: 36px;
-            font-weight: 500;
-            line-height: 1.3;
-            margin-bottom: 40px;
-            font-family: 'Cormorant', sans-serif;
-        }
-
-        .newsletter-form {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            margin-bottom: 35px;
-            max-width: 450px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 18px 24px;
-            border: none;
-            border-radius: 50px 0 0 50px;
-            background-color: #ffffff;
-            font-size: 15px;
-            color: #666;
-            outline: none;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .newsletter-input::placeholder {
-            color: #999;
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .newsletter-button {
-            padding: 18px 32px;
-            background-color: #2d2d2d;
-            color: #ffffff;
-            border: none;
-            border-radius: 0 50px 50px 0;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            white-space: nowrap;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .newsletter-button:hover {
-            background-color: #1a1a1a;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background-color: #2d2d2d;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background-color: #1a1a1a;
-            transform: translateY(-2px);
-        }
-
-        /* Social Icons using text/symbols */
-        .social-facebook::before {
-            content: "f";
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .social-twitter::before {
-            content: "𝕏";
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .social-instagram::before {
-            content: "📷";
-            font-size: 16px;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            .footer {
-                padding: 60px 0 40px;
-            }
-
-            .footer-container {
-                padding: 0 20px;
-            }
-
-            .desktop-layout {
-                display: none;
-            }
-
-            .mobile-layout {
-                display: block;
-            }
-
-            .brand-title {
-                font-size: 14px;
-                letter-spacing: 1.5px;
-                margin-bottom: 0;
-            }
-
-            .newsletter-title {
-                font-size: 28px;
-                margin-bottom: 30px;
-                text-align: center;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-                gap: 15px;
-                max-width: 100%;
-            }
-
-            .newsletter-input {
-                border-radius: 25px;
-                width: 100%;
-                padding: 16px 20px;
-            }
-
-            .newsletter-button {
-                border-radius: 25px;
-                align-self: center;
-                padding: 16px 40px;
-                width: auto;
-            }
-
-            .social-links {
-                justify-content: center;
-                margin-top: 20px;
-            }
-
-            .social-link {
-                width: 50px;
-                height: 50px;
-            }
-
-            /* Mobile content styles */
-            .mobile-content .company-name {
-                font-size: 16px;
-                margin-bottom: 25px;
-                margin-top: 30px;
-            }
-
-            .mobile-content .address-block,
-            .mobile-content .contact-info {
-                font-size: 14px;
-                margin-bottom: 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .newsletter-title {
-                font-size: 24px;
-            }
-
-            .social-link {
-                width: 45px;
-                height: 45px;
-            }
-
-            .newsletter-button {
-                padding: 14px 32px;
-            }
-        }
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 10px;
+    }
+    
+    .footer-content {
+        gap: 25px;
+    }
+    
+    .title {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .company-name {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .address {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .contact {
+        font-size: 14px;
+    }
+    
+    .logo {
+        width: 150px;
+        height: 75px;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
