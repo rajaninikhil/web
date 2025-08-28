@@ -74,3 +74,49 @@
     .carousel-dot.active {
       background-color: white;
     }
+
+
+    
+
+    /* Hide mobile images on desktop by default */
+.carousel-slide.mobile {
+  display: none;
+}
+
+/* Mobile responsive rules */
+@media (max-width: 768px) {
+  .carousel-slide.desktop {
+    display: none;
+  }
+  
+  .carousel-slide.mobile {
+    display: block;
+  }
+  
+  
+}
+
+/* Optional: Smaller screens adjustments */
+@media (max-width: 480px) {
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .carousel-btn.prev {
+    left: 5px;
+  }
+  
+  .carousel-btn.next {
+    right: 5px;
+  }
+  
+  .carousel-dots {
+    bottom: 15px;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+}

@@ -288,6 +288,7 @@
 			
 			.mobile-menu.active {
 				padding-top: 5vh;
+                font-family: Inter, sans-serif;
         	}
         }
 

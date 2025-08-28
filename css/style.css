@@ -1051,27 +1051,26 @@ iframe {
 }
 
 /* Responsive Fixes */
-@media (max-width: 1200px) {
-	.work-gallery {
-		grid-template-columns: repeat(
-			3,
-			1fr
-		); /* 3 items per row on medium screens */
-	}
-}
-
+/* Mobile: 3 in first row, 2 in second row */
 @media (max-width: 768px) {
 	.work-gallery {
-		grid-template-columns: repeat(
-			2,
-			1fr
-		); /* 2 items per row on small screens */
+		grid-template-columns: repeat(6, 1fr); /* Use 6 columns for precise positioning */
+		max-width: 100%;
+		padding: 0 10px;
 	}
-}
-
-@media (max-width: 480px) {
-	.work-gallery {
-		grid-template-columns: repeat(1, 1fr); /* 1 item per row on mobile */
+	
+	/* First row: 3 items, each spanning 2 columns */
+	.work-item:nth-child(1) { grid-column: 1 / 3; }
+	.work-item:nth-child(2) { grid-column: 3 / 5; }
+	.work-item:nth-child(3) { grid-column: 5 / 7; }
+	
+	/* Second row: 2 items centered, each spanning 2 columns with gap */
+	.work-item:nth-child(4) { grid-column: 2 / 4; }
+	.work-item:nth-child(5) { grid-column: 4 / 6; }
+	
+	/* Reduce max-width for mobile */
+	.work-item {
+		max-width: none;
 	}
 }
 
@@ -1123,6 +1122,118 @@ iframe {
   color: #f57c00; 
 }
 
+
+
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .brand-modal-content {
+    width: 100%;
+    padding: 3rem 2.5rem; /* Increased padding */
+    max-height: 85vh; /* Increased height */
+  }
+  
+  .brand-modal-content h2 {
+    font-size: 2.2rem; /* Larger heading */
+    margin-bottom: 1.5rem;
+  }
+  
+  .brand-modal-content p {
+    font-size: 1.5rem; /* Larger text */
+    line-height: 1.6;
+  }
+  
+  .brand-modal-content img {
+    margin: 1.5rem 0;
+  }
+}
+
+/* Mobile adjustments - significantly enhanced */
+@media (max-width: 480px) {
+  .brand-modal {
+    padding: 5px; /* Reduced outer padding for more space */
+  }
+  
+  .brand-modal-content {
+    width: 100%; /* Wider modal */
+    padding: 3rem 2rem; /* Increased internal padding */
+    max-height: 95vh; /* Much taller modal */
+    border-radius: 8px; /* Slightly larger radius */
+    overflow-y: auto; /* Allow scrolling if needed */
+  }
+  
+  .brand-modal-content h2 {
+    font-size: 2rem; /* Much larger heading */
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .brand-modal-content p {
+    font-size: 1.4rem; /* Significantly larger text */
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  
+  .brand-modal-content img {
+    margin: 2rem 0;
+    border-radius: 6px;
+	width: 100%;
+  }
+  
+  .brand-modal .close {
+    top: 15px;
+    right: 20px;
+    font-size: 32px; /* Larger close button */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+}
+
+/* Very small screens - enhanced */
+@media (max-width: 360px) {
+  .brand-modal-content {
+    width: 99%;
+    padding: 2.5rem 1.5rem; /* Generous padding */
+  }
+  
+  .brand-modal-content h2 {
+    font-size: 1.8rem; /* Still quite large */
+    margin-bottom: 1.25rem;
+  }
+  
+  .brand-modal-content p {
+    font-size: 1.1rem; /* Readable size */
+    line-height: 1.6;
+  }
+  
+  .brand-modal .close {
+    width: 36px;
+    height: 36px;
+    font-size: 28px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .brand-modal-content {
+    padding: 2rem 1.25rem;
+  }
+  
+  .brand-modal-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .brand-modal-content p {
+    font-size: 1rem;
+  }
+}
 
 
 

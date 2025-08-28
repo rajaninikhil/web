@@ -1,48 +1,70 @@
- const slides = document.querySelectorAll('.carousel-slide');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let index = 0;
-    let timer;
+function isMobile() {
+  return window.innerWidth <= 768;
+}
 
-    function showSlide(i) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      slides[i].classList.add('active');
-      dots[i].classList.add('active');
-    }
+function getActiveSlides() {
+  return document.querySelectorAll(isMobile() ? '.carousel-slide.mobile' : '.carousel-slide.desktop');
+}
 
-    function nextSlide() {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }
+const nextBtn = document.querySelector('.carousel-btn.next');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const dots = document.querySelectorAll('.carousel-dot');
+let index = 0;
+let timer;
 
-    function prevSlide() {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
-    }
+function showSlide(i) {
+  const slides = getActiveSlides();
+  
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  if (slides[i]) {
+    slides[i].classList.add('active');
+  }
+  if (dots[i]) {
+    dots[i].classList.add('active');
+  }
+}
 
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(nextSlide, 4000);
-    }
+function nextSlide() {
+  const slides = getActiveSlides();
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
 
-    nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetTimer();
-    });
+function prevSlide() {
+  const slides = getActiveSlides();
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+}
 
-    prevBtn.addEventListener('click', () => {
-      prevSlide();
-      resetTimer();
-    });
+function resetTimer() {
+  clearInterval(timer);
+  timer = setInterval(nextSlide, 4000);
+}
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        index = parseInt(dot.getAttribute('data-index'));
-        showSlide(index);
-        resetTimer();
-      });
-    });
+// Handle window resize to switch between mobile/desktop
+function handleResize() {
+  showSlide(index);
+}
 
-    timer = setInterval(nextSlide, 3000);
+nextBtn.addEventListener('click', () => {
+  nextSlide();
+  resetTimer();
+});
+
+prevBtn.addEventListener('click', () => {
+  prevSlide();
+  resetTimer();
+});
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    index = parseInt(dot.getAttribute('data-index'));
+    showSlide(index);
+    resetTimer();
+  });
+});
+
+window.addEventListener('resize', handleResize);
+timer = setInterval(nextSlide, 3000);
